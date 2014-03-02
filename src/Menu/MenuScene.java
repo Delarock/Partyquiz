@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import Main.StartGame;
 
 /**
  *
@@ -36,7 +37,7 @@ public class MenuScene{
         newGame.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+       
             }
         });
         
@@ -44,7 +45,7 @@ public class MenuScene{
         contributeQuestion.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                
             }
         });
         
