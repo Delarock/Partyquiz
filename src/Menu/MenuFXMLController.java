@@ -26,14 +26,15 @@ public class MenuFXMLController {
   * Initializes the controller class. This method is automatically called
   * after the fxml file has been loaded.
   */
-  @FXML
-  private void initialize() {
-             
-  }
+  
   @FXML
   private void changeScene(){
       StartGame.changeScene("/Game/SelectPlayersFXML.fxml");
   }  
+  @FXML
+  private void quitGame(){
+      StartGame.quitGame();
+  }
 }
   
   

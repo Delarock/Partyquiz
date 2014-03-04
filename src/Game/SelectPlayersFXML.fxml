@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -16,18 +17,163 @@
           <children>
             <GridPane alignment="CENTER" prefHeight="398.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" text="Back" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-                <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" text="Next" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                <Button fx:id="buttonBack" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneBack" prefHeight="30.0" prefWidth="184.0" text="Back" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                <Button id="buttonForward" fx:id="buttonNext" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#changeSceneForward" prefHeight="30.0" prefWidth="184.0" text="Next" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="398.0" text="Select players" GridPane.columnIndex="1" GridPane.rowIndex="0">
                   <font>
                     <Font name="System Bold" size="20.0" />
                   </font>
                 </Label>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <children>
+                    <HBox alignment="CENTER" prefHeight="29.0" prefWidth="401.0">
+                      <children>
+                        <RadioButton fx:id="radioPlayers1" mnemonicParsing="false" onAction="#checkPlayers" selected="false" text="1 player ">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="playerGroup" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="radioPlayers2" mnemonicParsing="false" onAction="#checkPlayers" text="2 players " toggleGroup="$playerGroup" />
+                        <RadioButton id="radioPlayers2" fx:id="radioPlayers3" mnemonicParsing="false" onAction="#checkPlayers" text="3 players " toggleGroup="$playerGroup" />
+                        <RadioButton id="radioPlayers2" fx:id="radioPlayers4" minHeight="13.999908447265625" mnemonicParsing="false" onAction="#checkPlayers" prefHeight="13.999908447265625" text="4 players " toggleGroup="$playerGroup" />
+                        <RadioButton fx:id="radioPlayers5" mnemonicParsing="false" onAction="#checkPlayers" text="5 players" toggleGroup="$playerGroup" />
+                      </children>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="401.0">
+                      <children>
+                        <RadioButton fx:id="radioPlayers6" mnemonicParsing="false" onAction="#checkPlayers" text="6 players " toggleGroup="$playerGroup" />
+                        <RadioButton fx:id="radioPlayers7" mnemonicParsing="false" onAction="#checkPlayers" text="7 players " toggleGroup="$playerGroup" />
+                        <RadioButton fx:id="radioPlayers8" mnemonicParsing="false" onAction="#checkPlayers" text="8 players " toggleGroup="$playerGroup" />
+                        <RadioButton fx:id="radioPlayers9" mnemonicParsing="false" onAction="#checkPlayers" text="9 players " toggleGroup="$playerGroup" />
+                        <RadioButton fx:id="radioPlayers10" mnemonicParsing="false" onAction="#checkPlayers" text="10 players" toggleGroup="$playerGroup" />
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <children>
+                    <HBox alignment="CENTER" prefHeight="24.999900000002526" prefWidth="401.0" spacing="10.0" VBox.margin="$x1">
+                      <children>
+                        <Label alignment="CENTER_LEFT" text="Player 1: " />
+                        <TextField fx:id="nameField1" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <padding>
+                        <Insets fx:id="x1" />
+                      </padding>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="25.000099999997474" prefWidth="401.0" spacing="10.0" VBox.margin="$x1">
+                      <children>
+                        <Label text="Player 2: " />
+                        <TextField fx:id="nameField2" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <children>
+                    <HBox alignment="CENTER" prefHeight="24.999900000002526" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label alignment="CENTER_LEFT" text="Player 3: " />
+                        <TextField fx:id="nameField3" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <padding>
+                        <Insets fx:id="x1" />
+                      </padding>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="25.000099999997474" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label text="Player 4: " />
+                        <TextField fx:id="nameField4" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <children>
+                    <HBox alignment="CENTER" prefHeight="24.999900000002526" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label alignment="CENTER_LEFT" text="Player 5: " />
+                        <TextField fx:id="nameField5" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <padding>
+                        <Insets fx:id="x1" />
+                      </padding>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="25.000099999997474" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label text="Player 6: " />
+                        <TextField fx:id="nameField6" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <children>
+                    <HBox alignment="CENTER" prefHeight="24.999900000002526" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label alignment="CENTER_LEFT" text="Player 7: " />
+                        <TextField fx:id="nameField7" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <padding>
+                        <Insets fx:id="x1" />
+                      </padding>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="25.000099999997474" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label text="Player 8: " />
+                        <TextField fx:id="nameField8" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <children>
+                    <HBox alignment="CENTER" prefHeight="24.999900000002526" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label alignment="CENTER_LEFT" text="Player 9: " />
+                        <TextField fx:id="nameField9" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <padding>
+                        <Insets fx:id="x1" />
+                      </padding>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="25.000099999997474" prefWidth="401.0" spacing="10.0">
+                      <children>
+                        <Label text="Player 10:" />
+                        <TextField fx:id="nameField10" alignment="CENTER" prefWidth="250.0" />
+                      </children>
+                      <VBox.margin>
+                        <Insets fx:id="x1" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                </VBox>
               </children>
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="101.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="401.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="96.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
