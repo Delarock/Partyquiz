@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Game.PlayGameFXMLController">
+  <children>
+    <SplitPane dividerPositions="0.1505016722408027" focusTraversable="true" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="188.0" prefWidth="798.0">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="87.0" prefWidth="798.0" text="GameQuizition!" textAlignment="CENTER" textOverrun="ELLIPSIS" wrapText="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <font>
+                <Font name="Gungsuh" size="24.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <children>
+            <SplitPane dividerPositions="0.75" focusTraversable="true" prefHeight="535.0" prefWidth="798.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                    <VBox id="VBox" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="503.0" spacing="5.0">
+                      <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <Label fx:id="questionLabel" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="594.0" text="Dette er et spørsmål?" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <font>
+                                <Font name="Algerian" size="12.0" />
+                              </font>
+                            </Label>
+                          </children>
+                          <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                          </padding>
+                        </AnchorPane>
+                        <SplitPane dividerPositions="0.8817567567567568" focusTraversable="true" orientation="VERTICAL" prefHeight="298.0" prefWidth="594.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="592.0">
+                              <children>
+                                <GridPane prefHeight="449.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <children>
+                                    <Button fx:id="questionButton4" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonD" prefHeight="-1.0" prefWidth="-1.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                      <GridPane.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+                                      </GridPane.margin>
+                                    </Button>
+                                    <Button fx:id="questionButton3" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonC" prefHeight="-1.0" prefWidth="-1.0" text="Button" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                                    <Button fx:id="questionButton2" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonB" prefHeight="-1.0" prefWidth="-1.0" text="Button" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                                    <Button fx:id="questionButton1" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonA" text="Button" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                                  </children>
+                                  <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  </columnConstraints>
+                                  <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  </rowConstraints>
+                                </GridPane>
+                              </children>
+                            </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="592.0">
+                              <children>
+                                <Button fx:id="backButton" mnemonicParsing="false" onAction="#changeSceneBack" prefHeight="179.0" prefWidth="592.0" text="Back" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              </children>
+                            </AnchorPane>
+                          </items>
+                        </SplitPane>
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="0.0" spacing="5.0">
+                      <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="503.0" prefWidth="142.0">
+                          <children>
+                            <Label id="playerScore1" fx:id="playerName1" contentDisplay="CENTER" text="Name1" />
+                            <Label id="playerScore2" fx:id="playerName2" text="Name2" />
+                            <Label id="playerScore3" fx:id="playerName3" text="Name3" />
+                            <Label id="playerScore4" fx:id="playerName4" text="Name4" />
+                            <Label id="playerScore5" fx:id="playerName5" text="Name5" />
+                            <Label id="playerScore6" fx:id="playerName6" text="Name6" />
+                            <Label id="playerScore7" fx:id="playerName7" text="Name7" />
+                            <Label id="playerScore8" fx:id="playerName8" text="Name8" />
+                            <Label id="playerScore9" fx:id="playerName9" text="Name9" />
+                            <Label id="playerScore10" fx:id="playerName10" text="Name10" />
+                          </children>
+                        </VBox>
+                      </children>
+                    </HBox>
+                    <VBox alignment="TOP_CENTER" layoutX="142.0" layoutY="0.0" prefHeight="503.0" prefWidth="54.0">
+                      <children>
+                        <Label fx:id="playerScore1" text="Score1" />
+                        <Label fx:id="playerScore2" text="Score2" />
+                        <Label fx:id="playerScore3" text="Score3" />
+                        <Label fx:id="playerScore4" text="Score4" />
+                        <Label fx:id="playerScore5" text="Score5" />
+                        <Label fx:id="playerScore6" text="Score6" />
+                        <Label fx:id="playerScore7" text="Score7" />
+                        <Label fx:id="playerScore8" text="Score8" />
+                        <Label fx:id="playerScore9" text="Score9" />
+                        <Label fx:id="playerScore10" text="Score10" />
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+  <stylesheets>
+    <URL value="@playgamefxml.css" />
+  </stylesheets>
+</AnchorPane>

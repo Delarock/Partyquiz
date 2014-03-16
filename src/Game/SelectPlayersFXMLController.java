@@ -35,25 +35,26 @@ public class SelectPlayersFXMLController {
   @FXML
   private RadioButton radioPlayers10;
   @FXML
-  private TextField nameField1;
+  private static TextField nameField1;
   @FXML
-  private TextField nameField2;
+  private static TextField nameField2;
   @FXML
-  private TextField nameField3;
+  private static TextField nameField3;
   @FXML
-  private TextField nameField4;
+  private static TextField nameField4;
   @FXML
-  private TextField nameField5;
+  private static TextField nameField5;
   @FXML
-  private TextField nameField6;
+  private static TextField nameField6;
   @FXML
-  private TextField nameField7;
+  private static TextField nameField7;
   @FXML
-  private TextField nameField8;
+  private static TextField nameField8;
   @FXML
-  private TextField nameField9;
+  private static TextField nameField9;
   @FXML
-  private TextField nameField10;
+  private static TextField nameField10;
+  public static int numberOfPlayers = 0;
   
   // Reference to the main application
   private StartGame startgame;
@@ -72,11 +73,10 @@ public class SelectPlayersFXMLController {
   
   @FXML
   private void changeSceneForward(){
-      //StartGame.changeScene("");
+      StartGame.changeScene("/Game/PlayGameFXML.fxml");
   }
   @FXML
   private void checkPlayers(){
-      
      if (radioPlayers2.isSelected()){
         nameField2.setDisable(false);
         nameField3.setDisable(true);
@@ -87,6 +87,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 2;
      }
      else if (radioPlayers3.isSelected()){
         nameField2.setDisable(false);
@@ -98,6 +99,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 3;
      }
      else if (radioPlayers4.isSelected()){
         nameField2.setDisable(false);
@@ -109,6 +111,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 4;
      }
      else if (radioPlayers5.isSelected()){
         nameField2.setDisable(false);
@@ -120,6 +123,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 5;
      }
      else if (radioPlayers6.isSelected()){
         nameField2.setDisable(false);
@@ -131,6 +135,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 6;
      }
      else if (radioPlayers7.isSelected()){
         nameField2.setDisable(false);
@@ -142,6 +147,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 7;
      }
      else if (radioPlayers8.isSelected()){
         nameField2.setDisable(false);
@@ -153,6 +159,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(false);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
+        numberOfPlayers = 8;
      }
      else if (radioPlayers9.isSelected()){
         nameField2.setDisable(false);
@@ -164,6 +171,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(false);
         nameField9.setDisable(false);
         nameField10.setDisable(true);
+        numberOfPlayers = 9;
      }
      else if (radioPlayers10.isSelected()){
         nameField2.setDisable(false);
@@ -175,6 +183,7 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(false);
         nameField9.setDisable(false);
         nameField10.setDisable(false);
+        numberOfPlayers = 10;
      }
      else{
         nameField2.setDisable(true);
@@ -186,7 +195,42 @@ public class SelectPlayersFXMLController {
         nameField8.setDisable(true);
         nameField9.setDisable(true);
         nameField10.setDisable(true);
-     }
-         
+        numberOfPlayers = 1;
+     }       
    }
+  public static int getNumberOfPlayers()
+     {
+         return numberOfPlayers;
+     }
+  public static String getName1(){
+      return nameField1.getText();
+  }
+  public static String getName2(){
+      return nameField2.getText();
+  }
+  public static String getName3(){
+      return nameField3.getText();
+  }
+  public static String getName4(){
+      return nameField4.getText();
+  }
+  public static String getName5(){
+      return nameField5.getText();
+  }
+  public static String getName6(){
+      return nameField6.getText();
+  }
+  public static String getName7(){
+      return nameField7.getText();
+  }
+  public static String getName8(){
+      return nameField8.getText();
+  }
+  public static String getName9(){
+      return nameField9.getText();
+  }
+  public static String getName10(){
+      return nameField10.getText();
+  }
+
 }
