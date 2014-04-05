@@ -4,6 +4,7 @@ import static Game.SelectPlayersFXMLController.getNumberOfPlayers;
 import Main.StartGame;
 import Players.PlayerList;
 import Questions.Question;
+import Server.ServerConnection;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
@@ -90,6 +91,7 @@ public class PlayGameFXMLController implements Initializable{
     private int currentPlayer;
     private PlayerList players;
     private PauseTransition smallBreak = new PauseTransition(Duration.millis(2000));
+    boolean canAnswer = true;
     /**
     * The constructor.
     * The constructor is called before the initialize() method.
@@ -171,34 +173,38 @@ public class PlayGameFXMLController implements Initializable{
         questionButton3.setText(currentQuestion.getAnswerC());
         questionButton4.setText(currentQuestion.getAnswerD());
         questionLabel.setText(currentQuestion.getQuestion());
+        
     }
     private void nextQuestion(){
-        currentQuestion = new Question("Dette er spørsmål nr 2");
+        getNextQuestion();
         addQuestionInfo();
+        canAnswer = true; 
     }
     @FXML
     private void onPressingButtonA(){
-        if (currentQuestion.isACorrect()){
+        if (currentQuestion.isACorrect() && canAnswer){
+            canAnswer = false;
             addScore(currentPlayer);
             questionButton1.setStyle("-fx-background-color: green;");
             smallDelay();
         }
-        else{
+        else if (canAnswer){
+            canAnswer = false;
             questionButton1.setStyle("-fx-background-color: red;");
             smallDelay();
-            
-        }
-            
+        }   
     }
     @FXML
     private void onPressingButtonB(){
-        if (currentQuestion.isBCorrect()){
+        if (currentQuestion.isBCorrect()&& canAnswer){
+            canAnswer = false;
             addScore(currentPlayer);
             questionButton2.setStyle("-fx-background-color: green;");
             smallDelay();
             
         }
-        else{
+        else if(canAnswer){
+            canAnswer = false;
             questionButton2.setStyle("-fx-background-color: red;");
             smallDelay();
             
@@ -207,13 +213,15 @@ public class PlayGameFXMLController implements Initializable{
     }
     @FXML
     private void onPressingButtonC(){
-        if (currentQuestion.isCCorrect()){
+        if (currentQuestion.isCCorrect() && canAnswer){
+            canAnswer = false;
             addScore(currentPlayer);
             questionButton3.setStyle("-fx-background-color: green;");
             smallDelay();
             
         }
-        else{
+        else if (canAnswer){
+            canAnswer = false;
             questionButton3.setStyle("-fx-background-color: red;");
             smallDelay();
             
@@ -222,13 +230,15 @@ public class PlayGameFXMLController implements Initializable{
     }
     @FXML
     private void onPressingButtonD(){
-        if (currentQuestion.isDCorrect()){
+        if (currentQuestion.isDCorrect() && canAnswer){
+            canAnswer = false;
             addScore(currentPlayer);
             questionButton4.setStyle("-fx-background-color: green;");
             smallDelay();
             
         }
-        else{
+        else if (canAnswer){
+            canAnswer = false;
             questionButton4.setStyle("-fx-background-color: red;");
             smallDelay();
             
@@ -338,5 +348,11 @@ public class PlayGameFXMLController implements Initializable{
         });
         smallBreak.play();
     }
-   
+    private void getNextQuestion() 
+    {
+        ServerConnection server = new ServerConnection();
+        currentQuestion = server.getNextRandomQuestion("approvedQuestions");
+         
+    }
+
 }

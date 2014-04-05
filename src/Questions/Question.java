@@ -23,7 +23,23 @@ public class Question {
         correctD = false;
         
     }
-    
+    public Question(int Id, String Question, String A, String B, String C, String D, int IsA,  int IsB, int IsC, int IsD, String Category, String Subcategory)
+    {
+        //qID = Id;
+        questionString = Question;
+        answerA = A;
+        correctA = (IsA == 1);
+        answerB = B;
+        correctB = (IsB == 1);
+        answerC = C;
+        correctC = (IsC == 1);
+        answerD = D;
+        correctD = (IsD == 1);
+        category = Category;
+        subcategory = Subcategory;
+         
+    }
+ 
     public String getQuestion(){
         return questionString;
     }
