@@ -23,18 +23,18 @@ public class Question {
         correctD = false;
         
     }
-    public Question(int Id, String Question, String A, String B, String C, String D, int IsA,  int IsB, int IsC, int IsD, String Category, String Subcategory)
+    public Question(int Id, String Question, String A, String B, String C, String D, boolean IsA,  boolean IsB, boolean IsC, boolean IsD, String Category, String Subcategory)
     {
         //qID = Id;
         questionString = Question;
         answerA = A;
-        correctA = (IsA == 1);
+        correctA = IsA;
         answerB = B;
-        correctB = (IsB == 1);
+        correctB = IsB;
         answerC = C;
-        correctC = (IsC == 1);
+        correctC = IsC;
         answerD = D;
-        correctD = (IsD == 1);
+        correctD = IsD;
         category = Category;
         subcategory = Subcategory;
          

@@ -86,6 +86,7 @@ public class PlayGameFXMLController implements Initializable{
 
     // Reference to the main application
     private StartGame startgame;
+    ServerConnection server = new ServerConnection();
     int numberOfPlayers = 0;
     private Question currentQuestion = new Question("Dette er spørsmål nr 1");
     private int currentPlayer;
@@ -350,8 +351,8 @@ public class PlayGameFXMLController implements Initializable{
     }
     private void getNextQuestion() 
     {
-        ServerConnection server = new ServerConnection();
-        currentQuestion = server.getNextRandomQuestion("approvedQuestions");
+        
+        currentQuestion = server.getNextQuestion();
          
     }
 

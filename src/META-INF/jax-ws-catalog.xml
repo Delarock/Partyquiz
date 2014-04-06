@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://gamequizition.azurewebsites.net/QuizitionService.svc?wsdl" uri="wsdl/gamequizition.azurewebsites.net/QuizitionService.svc.wsdl"/>
+    <system systemId="https://gamequizition.azurewebsites.net/QuizitionService.svc?xsd=xsd0" uri="wsdl/gamequizition.azurewebsites.net/QuizitionService.svc.xsd_xsd0.xsd"/>
+    <system systemId="https://gamequizition.azurewebsites.net/QuizitionService.svc?xsd=xsd1" uri="wsdl/gamequizition.azurewebsites.net/QuizitionService.svc.xsd_xsd1.xsd"/>
+    <system systemId="https://gamequizition.azurewebsites.net/QuizitionService.svc?xsd=xsd2" uri="wsdl/gamequizition.azurewebsites.net/QuizitionService.svc.xsd_xsd2.xsd"/>
+</catalog>
