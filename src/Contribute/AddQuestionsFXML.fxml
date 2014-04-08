@@ -3,12 +3,102 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml" fx:controller="Contribute.AddQuestionsFXMLController">
-    <stylesheets>
-        <URL value="@addquestionsfxml.css"/>
-    </stylesheets>
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Contribute.AddQuestionsFXMLController">
+  <children>
+    <VBox fx:id="vbox" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="800.0">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Add Question" textAlignment="CENTER">
+              <font>
+                <Font size="24.0" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Question:" />
+            <TextField fx:id="questionString" prefWidth="259.0">
+              <HBox.margin>
+                <Insets />
+              </HBox.margin>
+            </TextField>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Alternative 1:" />
+            <TextField fx:id="answer1String" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Alternative 2:" />
+            <TextField fx:id="answer2String" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Alternative 3:" />
+            <TextField fx:id="answer3String" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Alternative 4:" />
+            <TextField fx:id="answer4String" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Category:" />
+            <TextField fx:id="category" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Subcategory:" />
+            <TextField fx:id="subcategory" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Label text="Correct answer:">
+              <HBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+              </HBox.margin>
+            </Label>
+            <RadioButton fx:id="answer1Radio" mnemonicParsing="false" selected="false" text="Alternative 1" textAlignment="LEFT" HBox.margin="$x1">
+              <toggleGroup>
+                <ToggleGroup fx:id="answers" />
+              </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="answer2Radio" mnemonicParsing="false" text="Alternative 2" toggleGroup="$answers" HBox.margin="$x1" />
+            <RadioButton fx:id="answer3Radio" mnemonicParsing="false" text="Alternative 3" toggleGroup="$answers" HBox.margin="$x1" />
+            <RadioButton fx:id="answer4Radio" mnemonicParsing="false" text="Alternative 4" toggleGroup="$answers" HBox.margin="$x1" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+          <children>
+            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#changeBack" prefHeight="50.0" prefWidth="100.0" text="Back" />
+            <Button fx:id="buttonSend" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sendQuestion" prefHeight="50.0" prefWidth="250.0" text="Send!">
+              <HBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@menufxml.css" />
+  </stylesheets>
 </AnchorPane>

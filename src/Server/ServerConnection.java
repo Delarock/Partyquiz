@@ -51,7 +51,7 @@ public class ServerConnection {
          
     }
     public ArrayOfQuizQuestion getNewQuestionList(){
-       ArrayOfQuizQuestion localQuestionArray = service.getBasicHttpBindingIQuizitionService().getQuestions(10, null);
+       ArrayOfQuizQuestion localQuestionArray = service.getBasicHttpBindingIQuizitionService().getQuestions(50, null);
        return localQuestionArray;
     }
     

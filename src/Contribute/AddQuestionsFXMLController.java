@@ -3,14 +3,41 @@ package Contribute;
 import Main.StartGame;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 public class AddQuestionsFXMLController {
+  
   @FXML
-  private Button buttonStart;
+  private TextField questionString;
   @FXML
-  private Button buttonQuestion;
+  private TextField answer1String;
   @FXML
-  private Button buttonQuit;
+  private TextField answer2String;
+  @FXML
+  private TextField answer3String;
+  @FXML
+  private TextField answer4String;
+  @FXML
+  private TextField category;
+  @FXML
+  private TextField subcategory;
+  @FXML
+  private ToggleGroup answers;
+  @FXML
+  private RadioButton answer1Radio;
+  @FXML
+  private RadioButton answer2Radio;
+  @FXML
+  private RadioButton answer3Radio;
+  @FXML
+  private RadioButton answer4Radio;
+  @FXML
+  private Button buttonBack;
+  @FXML
+  private Button buttonSend;
+  
   
   // Reference to the main application
   private StartGame startgame;
@@ -29,10 +56,10 @@ public class AddQuestionsFXMLController {
   
   @FXML
   private void changeBack(){
-      StartGame.changeScene("/Game/SelectPlayersFXML.fxml");
+      StartGame.changeScene("/Menu/MenuFXML.fxml");
   }  
   @FXML
-  private void quitGame(){
-      StartGame.quitGame();
+  private void sendQuestion(){
+      StartGame.changeScene("/Menu/MenuFXML.fxml");
   }
 }

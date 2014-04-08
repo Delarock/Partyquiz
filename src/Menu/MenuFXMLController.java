@@ -30,7 +30,11 @@ public class MenuFXMLController {
   @FXML
   private void changeScene(){
       StartGame.changeScene("/Game/SelectPlayersFXML.fxml");
-  }  
+  }
+  @FXML
+  private void changeAddQuestion(){
+      StartGame.changeScene("/Contribute/AddQuestionsFXML.fxml");
+  } 
   @FXML
   private void quitGame(){
       StartGame.quitGame();
