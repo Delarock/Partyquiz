@@ -1,7 +1,69 @@
-/*
- * Empty Stylesheet file.
- */
-
-.mainFxmlClass {
-
+.root {
+    -fx-background-color:#e48bb4;
 }
+.anchorpane {
+    -fx-background-color:#e48bb4;
+}
+.Anchorpane {
+    -fx-background-color:#e48bb4;
+}
+.button {
+    -fx-background-color:#f63cef;
+    -fx-font-size: 14;
+    -fx-text-fill: black;
+    -fx-background-radius: 16.4, 15;
+    -fx-background-insets: -1.4, 0;
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+    -fx-border-color: #f63cef;
+    -fx-padding: 0;
+    -fx-font-family: "Ariel";    
+}
+.button:hover {
+    -fx-background-color:#ef09a4;
+    -fx-border-color: #ef09a4;
+}
+.button:focused {
+    -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
+}
+.questionbutton {
+    -fx-background-color:#f63cef;
+    -fx-font-size: 20;
+    -fx-text-fill: black;
+    -fx-background-radius: 16.4, 15;
+    -fx-background-insets: -1.4, 0;
+    -fx-border-radius: 20;
+    -fx-border-width: 0;
+    -fx-border-color: #f63cef;
+    -fx-padding: 0;
+    -fx-font-family: "Ariel";    
+}
+.questionbutton:hover {
+    -fx-background-color:#ef09a4;
+    -fx-border-color: #ef09a4;
+}
+.questionbutton:focused {
+    -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
+}
+.label {
+    -fx-text-fill: black;
+    -fx-font-size: 14;
+    -fx-font-family: "Ariel";
+}
+#header {
+    -fx-text-fill: #d9ec9b;
+    -fx-font-size: 54;
+    -fx-font-weigth: bold;
+    -fx-font-family: "Impact";
+}
+#info {
+    -fx-text-fill: black;
+    -fx-font-size: 12;
+    -fx-font-family: "Ariel";
+}
+#questionLabel {
+    -fx-text-fill: black;
+    -fx-font-size: 20;
+    -fx-font-family: "Ariel";
+}
+//"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);

@@ -48,10 +48,7 @@ public class ServerConnection {
         if (questionList.getQuizQuestion().isEmpty()){
             questionList = getNewQuestionList();
         } 
-        for (QuizQuestion question : questionList.getQuizQuestion())
-        {
-            System.out.println(question.getQuestionId().toString());
-        }
+        
         int qId = questionList.getQuizQuestion().get(0).getQuestionId();
         String question = questionList.getQuizQuestion().get(0).getText().getValue();
         String answerA = questionList.getQuizQuestion().get(0).getAnswers().getValue().getQuizAnswer().get(0).getText().getValue();

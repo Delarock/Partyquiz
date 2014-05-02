@@ -17,14 +17,14 @@
           <children>
             <GridPane prefHeight="360.0" prefWidth="420.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Category:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Difficulty:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Not yet rated" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Question number:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Questions left:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Category:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Difficulty:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Not yet rated" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Question number:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Questions left:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,7 +47,7 @@
         </AnchorPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.columnSpan="7" GridPane.rowIndex="1" GridPane.rowSpan="3">
           <children>
-            <Label fx:id="questionLabel" alignment="CENTER" prefHeight="180.0" prefWidth="560.0" text="Dette er et spørsmål?" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label fx:id="questionLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" prefHeight="192.0" prefWidth="560.0" text="Dette er et spørsmål?" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <font>
                 <Font name="Algerian" size="12.0" />
               </font>
@@ -61,14 +61,14 @@
           <children>
             <GridPane prefHeight="449.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                <Button fx:id="questionButton4" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonD" prefHeight="-1.0" prefWidth="-1.0" text="Button" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Button fx:id="questionButton4" contentDisplay="TEXT_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonD" prefHeight="-1.0" prefWidth="-1.0" styleClass="questionbutton" text="Button" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <GridPane.margin>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
                   </GridPane.margin>
                 </Button>
-                <Button fx:id="questionButton3" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonC" prefHeight="-1.0" prefWidth="-1.0" text="Button" wrapText="true" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1" />
-                <Button fx:id="questionButton2" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonB" prefHeight="-1.0" prefWidth="-1.0" text="Button" wrapText="true" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
-                <Button fx:id="questionButton1" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonA" text="Button" wrapText="true" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                <Button fx:id="questionButton3" contentDisplay="TEXT_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonC" prefHeight="-1.0" prefWidth="-1.0" styleClass="questionbutton" text="Button" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                <Button fx:id="questionButton2" contentDisplay="TEXT_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonB" prefHeight="-1.0" prefWidth="-1.0" styleClass="questionbutton" text="Button" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" underline="false" wrapText="true" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                <Button fx:id="questionButton1" cache="false" contentDisplay="TEXT_ONLY" depthTest="INHERIT" focusTraversable="true" graphicTextGap="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#onPressingButtonA" styleClass="questionbutton" text="Button" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" visible="true" wrapText="true" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="0" />
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -83,7 +83,7 @@
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="188.0" prefWidth="798.0" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
           <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="87.0" prefWidth="798.0" text="GameQuizition!" textAlignment="CENTER" textOverrun="ELLIPSIS" wrapText="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label id="header" alignment="CENTER" contentDisplay="CENTER" prefHeight="87.0" prefWidth="798.0" text="GameQuizition!" textAlignment="CENTER" textOverrun="ELLIPSIS" wrapText="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <font>
                 <Font name="Gungsuh" size="24.0" />
               </font>

@@ -183,7 +183,7 @@ public class PlayGameFXMLController implements Initializable{
         players.addPlayers(getNumberOfPlayers());
         setNameAndScore(players);
         currentPlayer = 1;
-        addQuestionInfo();
+        nextQuestion();
     } 
 
     private void addQuestionInfo() {
@@ -330,22 +330,10 @@ public class PlayGameFXMLController implements Initializable{
 
     private void nextRound() {
         
-        questionButton1.setStyle("-fx-text-fill:white;"
-                                 +"-fx-font-size: 20px;"
-                                 +"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);"
-                                 +"-fx-padding: 5 30 5 30;");
-        questionButton2.setStyle("-fx-text-fill:white;"
-                                 +"-fx-font-size: 20px;"
-                                 +"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);"
-                                 +"-fx-padding: 5 30 5 30;");
-        questionButton3.setStyle("-fx-text-fill:white;"
-                                 +"-fx-font-size: 20px;"
-                                 +"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);"
-                                 +"-fx-padding: 5 30 5 30;");
-        questionButton4.setStyle("-fx-text-fill:white;"
-                                 +"-fx-font-size: 20px;"
-                                 +"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);"
-                                 +"-fx-padding: 5 30 5 30;");
+        questionButton1.setStyle("questionbutton");
+        questionButton2.setStyle("questionbutton");
+        questionButton3.setStyle("questionbutton");
+        questionButton4.setStyle("questionbutton");
         nextPlayer();
         nextQuestion();
         
