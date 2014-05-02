@@ -114,46 +114,64 @@ public class PlayGameFXMLController implements Initializable{
         if (list.get(1).getActive()){
             playerName2.setText(list.get(1).getName());
             playerScore2.setText(Integer.toString(list.get(1).getScore()));
+            playerName2.setVisible(true);
+            playerScore2.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(2).getActive()){
             playerName3.setText(list.get(2).getName());
             playerScore3.setText(Integer.toString(list.get(2).getScore()));
+            playerName3.setVisible(true);
+            playerScore3.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(3).getActive()){
             playerName4.setText(list.get(3).getName());
             playerScore4.setText(Integer.toString(list.get(3).getScore()));
+            playerName4.setVisible(true);
+            playerScore4.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(4).getActive()){
             playerName5.setText(list.get(4).getName());
             playerScore5.setText(Integer.toString(list.get(4).getScore()));
+            playerName5.setVisible(true);
+            playerScore5.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(5).getActive()){
             playerName6.setText(list.get(5).getName());
             playerScore6.setText(Integer.toString(list.get(5).getScore()));
+            playerName6.setVisible(true);
+            playerScore6.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(6).getActive()){
             playerName7.setText(list.get(6).getName());
             playerScore7.setText(Integer.toString(list.get(6).getScore()));
+            playerName7.setVisible(true);
+            playerScore7.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(7).getActive()){
             playerName8.setText(list.get(7).getName());
             playerScore8.setText(Integer.toString(list.get(7).getScore()));
+            playerName8.setVisible(true);
+            playerScore8.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(8).getActive()){
             playerName9.setText(list.get(8).getName());
             playerScore9.setText(Integer.toString(list.get(8).getScore()));
+            playerName9.setVisible(true);
+            playerScore9.setVisible(true);
             numberOfPlayers++;
         }
         if (list.get(9).getActive()){
             playerName10.setText(list.get(9).getName());
             playerScore10.setText(Integer.toString(list.get(9).getScore()));
+            playerName10.setVisible(true);
+            playerScore10.setVisible(true);
             numberOfPlayers++;
         }
            

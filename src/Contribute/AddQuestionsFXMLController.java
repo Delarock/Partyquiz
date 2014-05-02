@@ -1,6 +1,7 @@
 package Contribute;
 
 import Main.StartGame;
+import Server.ServerConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -60,6 +61,24 @@ public class AddQuestionsFXMLController {
   }  
   @FXML
   private void sendQuestion(){
+      ServerConnection server = new ServerConnection();
+      server.addQuestionForReview(questionString.getText(), answer1String.getText(), answer2String.getText(), answer3String.getText(), answer4String.getText(), getCorrectAnswerChar(), category.getText());
       StartGame.changeScene("/Menu/MenuFXML.fxml");
+      
   }
+
+    private String getCorrectAnswerChar() {
+        if (answer1Radio.isSelected()){
+            return "A";
+        }
+        else if (answer2Radio.isSelected()){
+            return "B";
+        }
+        else if (answer3Radio.isSelected()){
+            return "C";
+        }
+        else{
+            return "D";
+        }
+    }
 }

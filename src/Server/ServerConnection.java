@@ -1,28 +1,47 @@
 package Server;
  
 import Questions.Question;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import com.microsoft.sqlserver.jdbc.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
  
 public class ServerConnection {
      QuizitionService service = new QuizitionService();
      ArrayOfQuizQuestion questionList = getNewQuestionList();
+     ObjectFactory factory = new ObjectFactory();
      
     public ServerConnection()
     {
         
     }
  
-    public void addQuestionForReview(String question, String answerA, String answerB, String answerC, String answerD, String correct, String category, String subcategory) 
+    public void addQuestionForReview(String question, String answerA, String answerB, String answerC, String answerD, String correct, String category) 
     {
+        QuizAnswer tempAnswerA = new QuizAnswer();
+            tempAnswerA.setIsCorrect(correct == "A");
+            tempAnswerA.setText(factory.createQuizAnswerText(answerA));
+        QuizAnswer tempAnswerB = new QuizAnswer();
+            tempAnswerB.setIsCorrect(correct == "B");
+            tempAnswerB.setText(factory.createQuizAnswerText(answerB));
+        QuizAnswer tempAnswerC = new QuizAnswer();
+            tempAnswerC.setIsCorrect(correct == "C");
+            tempAnswerC.setText(factory.createQuizAnswerText(answerC));
+        QuizAnswer tempAnswerD = new QuizAnswer();
+            tempAnswerD.setIsCorrect(correct == "D");
+            tempAnswerD.setText(factory.createQuizAnswerText(answerD));
+        
+        List<QuizAnswer> answerList = null;
+            answerList.add(tempAnswerA);
+            answerList.add(tempAnswerB);
+            answerList.add(tempAnswerC);
+            answerList.add(tempAnswerD);
+         ArrayOfQuizAnswer answers = factory.createArrayOfQuizAnswer(); //Hvordan gi verdi til denne?
+         JAXBElement<ArrayOfQuizAnswer> JAXanswers = factory.createArrayOfQuizAnswer(answers);
          
+        QuizQuestion tempQuestion = factory.createQuizQuestion();
+            tempQuestion.setText(factory.createString(question));
+            tempQuestion.setAnswers(JAXanswers);
+            tempQuestion.setCategory(null);
+        //service.getBasicHttpBindingIQuizitionService().addQuestion(new QuizQuestion();
     }
     public Question getNextQuestion()
     {
