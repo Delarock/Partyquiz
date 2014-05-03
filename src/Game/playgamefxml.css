@@ -66,4 +66,14 @@
     -fx-font-size: 20;
     -fx-font-family: "Ariel";
 }
+.currentPlayer {
+    -fx-text-fill: black;
+    -fx-font-size: 18;
+    -fx-font-family: "Ariel";
+}
+.correctLabel {
+    -fx-text-fill: green;
+    -fx-font-size: 18;
+    -fx-font-family: "Ariel";
+}
 //"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);

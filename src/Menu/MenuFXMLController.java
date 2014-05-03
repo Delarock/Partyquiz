@@ -29,7 +29,7 @@ public class MenuFXMLController {
   
   @FXML
   private void changeScene(){
-      StartGame.changeScene("/Game/SelectPlayersFXML.fxml");
+      StartGame.changeScene("/Game/SelectConfigFXML.fxml");
   }
   @FXML
   private void changeAddQuestion(){

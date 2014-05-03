@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Game.PlayGameFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Game.PlayGameFXMLController">
   <children>
     <GridPane id="GridPane" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" scaleX="1.0" scaleY="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -161,6 +161,6 @@
     </GridPane>
   </children>
   <stylesheets>
-    <URL value="@playgamefxml.css" />
+    <URL value="@../Resources/colorTemplatePink.css" />
   </stylesheets>
 </AnchorPane>

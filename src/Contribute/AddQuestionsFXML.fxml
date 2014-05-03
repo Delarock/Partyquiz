@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -22,69 +23,81 @@
             </Label>
           </children>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+        <GridPane prefHeight="434.0" prefWidth="800.0">
           <children>
-            <Label text="Question:" />
-            <TextField fx:id="questionString" prefWidth="259.0">
-              <HBox.margin>
-                <Insets />
-              </HBox.margin>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Question:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="questionString" prefWidth="259.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+              <GridPane.margin>
+                <Insets fx:id="x3" />
+              </GridPane.margin>
             </TextField>
+            <Label text="Alternative 1:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="answer1String" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Alternative 2:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="answer2String" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+              <children>
+                <RadioButton id="" fx:id="categorySport" mnemonicParsing="false" text="Sport">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="category" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="categoryGeography" mnemonicParsing="false" text="Geography" toggleGroup="$category" />
+                <RadioButton fx:id="categoryEntertainment" mnemonicParsing="false" text="Entertainment" toggleGroup="$category" />
+                <RadioButton fx:id="categoryMixed" mnemonicParsing="false" selected="true" text="Mixed" toggleGroup="$category" />
+                <RadioButton fx:id="categoryScience" mnemonicParsing="false" text="Science" toggleGroup="$category" />
+              </children>
+            </HBox>
+            <Label text="Alternative 3:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="answer3String" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Alternative 4:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="answer4String" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Correct answer:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+              <children>
+                <RadioButton fx:id="answer1Radio" mnemonicParsing="false" selected="false" text="Alternative 1" textAlignment="LEFT">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="answers" />
+                  </toggleGroup>
+                  <HBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+                  </HBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer2Radio" mnemonicParsing="false" text="Alternative 2" toggleGroup="$answers" HBox.margin="$x1" />
+                <RadioButton fx:id="answer3Radio" mnemonicParsing="false" text="Alternative 3" toggleGroup="$answers" HBox.margin="$x1" />
+                <RadioButton fx:id="answer4Radio" mnemonicParsing="false" text="Alternative 4" toggleGroup="$answers" HBox.margin="$x1" />
+              </children>
+            </HBox>
+            <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.rowSpan="2" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+              <children>
+                <RadioButton fx:id="categoryHistory" mnemonicParsing="false" text="History" toggleGroup="$category" />
+                <RadioButton fx:id="categoryFoodAndDrink" disable="true" mnemonicParsing="false" text="Food &amp; Drink" toggleGroup="$category" />
+                <RadioButton disable="true" mnemonicParsing="false" text="Placeholder" toggleGroup="$category" />
+                <RadioButton disable="true" mnemonicParsing="false" text="Placeholder" toggleGroup="$category" />
+                <RadioButton disable="true" mnemonicParsing="false" text="Placeholder" toggleGroup="$category" />
+              </children>
+            </HBox>
           </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Alternative 1:" />
-            <TextField fx:id="answer1String" prefWidth="200.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Alternative 2:" />
-            <TextField fx:id="answer2String" prefWidth="200.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Alternative 3:" />
-            <TextField fx:id="answer3String" prefWidth="200.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Alternative 4:" />
-            <TextField fx:id="answer4String" prefWidth="200.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Category:" />
-            <TextField fx:id="category" prefWidth="200.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Subcategory:" />
-            <TextField fx:id="subcategory" prefWidth="200.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
-          <children>
-            <Label text="Correct answer:">
-              <HBox.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
-              </HBox.margin>
-            </Label>
-            <RadioButton fx:id="answer1Radio" mnemonicParsing="false" selected="false" text="Alternative 1" textAlignment="LEFT" HBox.margin="$x1">
-              <toggleGroup>
-                <ToggleGroup fx:id="answers" />
-              </toggleGroup>
-            </RadioButton>
-            <RadioButton fx:id="answer2Radio" mnemonicParsing="false" text="Alternative 2" toggleGroup="$answers" HBox.margin="$x1" />
-            <RadioButton fx:id="answer3Radio" mnemonicParsing="false" text="Alternative 3" toggleGroup="$answers" HBox.margin="$x1" />
-            <RadioButton fx:id="answer4Radio" mnemonicParsing="false" text="Alternative 4" toggleGroup="$answers" HBox.margin="$x1" />
-          </children>
-        </HBox>
+          <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <HBox prefHeight="185.0" prefWidth="800.0" />
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
           <children>
             <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#changeBack" prefHeight="50.0" prefWidth="100.0" text="Back" />

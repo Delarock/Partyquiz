@@ -192,6 +192,6 @@
     </AnchorPane>
   </children>
   <stylesheets>
-    <URL value="@selectplayersfxml.css" />
+    <URL value="@../Resources/colorTemplatePink.css" />
   </stylesheets>
 </AnchorPane>

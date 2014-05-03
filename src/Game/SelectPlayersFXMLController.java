@@ -68,7 +68,7 @@ public class SelectPlayersFXMLController {
   
   @FXML
   private void changeSceneBack(){
-      StartGame.changeScene("/Menu/MenuFXML.fxml");
+      StartGame.changeScene("/Game/SelectConfigFXML.fxml");
   }
   
   @FXML

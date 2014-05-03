@@ -174,7 +174,7 @@ public class PlayGameFXMLController implements Initializable{
             playerScore10.setVisible(true);
             numberOfPlayers++;
         }
-           
+         
     }
 
     @Override
@@ -184,6 +184,7 @@ public class PlayGameFXMLController implements Initializable{
         setNameAndScore(players);
         currentPlayer = 1;
         nextQuestion();
+        indicateCurrentPlayer(currentPlayer);
     } 
 
     private void addQuestionInfo() {
@@ -270,60 +271,120 @@ public class PlayGameFXMLController implements Initializable{
             temp = Integer.parseInt(playerScore1.getText());
             temp++;
             playerScore1.setText(Integer.toString(temp));
+            playerScore1.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName1.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         } 
         else if (playerNumber == 2){
             temp = Integer.parseInt(playerScore2.getText());
             temp++;
             playerScore2.setText(Integer.toString(temp));
+            playerScore2.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName2.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 3){
             temp = Integer.parseInt(playerScore3.getText());
             temp++;
             playerScore3.setText(Integer.toString(temp));
+            playerScore3.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName3.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 4){
             temp = Integer.parseInt(playerScore4.getText());
             temp++;
             playerScore4.setText(Integer.toString(temp));
+            playerScore4.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName4.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 5){
             temp = Integer.parseInt(playerScore5.getText());
             temp++;
             playerScore5.setText(Integer.toString(temp));
+            playerScore5.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName5.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 6){
             temp = Integer.parseInt(playerScore6.getText());
             temp++;
             playerScore6.setText(Integer.toString(temp));
+            playerScore6.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName6.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 7){
             temp = Integer.parseInt(playerScore7.getText());
             temp++;
             playerScore7.setText(Integer.toString(temp));
+            playerScore7.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName7.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 8){
             temp = Integer.parseInt(playerScore8.getText());
             temp++;
             playerScore8.setText(Integer.toString(temp));
+            playerScore8.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName8.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 9){
             temp = Integer.parseInt(playerScore9.getText());
             temp++;
             playerScore9.setText(Integer.toString(temp));
+            playerScore9.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName9.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
         else if (playerNumber == 10){
             temp = Integer.parseInt(playerScore10.getText());
             temp++;
             playerScore10.setText(Integer.toString(temp));
+            playerScore10.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName10.setStyle("-fx-text-fill: green;"
+                                +"-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
             players.get(playerNumber).increaseScore();
         }
     }
@@ -334,9 +395,30 @@ public class PlayGameFXMLController implements Initializable{
         questionButton2.setStyle("questionbutton");
         questionButton3.setStyle("questionbutton");
         questionButton4.setStyle("questionbutton");
+        playerName1.setStyle("label");
+        playerScore1.setStyle("label");
+        playerName2.setStyle("label");
+        playerScore2.setStyle("label");
+        playerName3.setStyle("label");
+        playerScore3.setStyle("label");
+        playerName4.setStyle("label");
+        playerScore4.setStyle("label");
+        playerName5.setStyle("label");
+        playerScore5.setStyle("label");
+        playerName6.setStyle("label");
+        playerScore6.setStyle("label");
+        playerName7.setStyle("label");
+        playerScore7.setStyle("label");
+        playerName8.setStyle("label");
+        playerScore8.setStyle("label");
+        playerName9.setStyle("label");
+        playerScore9.setStyle("label");
+        playerName10.setStyle("label");
+        playerScore10.setStyle("label");
+        
         nextPlayer();
         nextQuestion();
-        
+        indicateCurrentPlayer(currentPlayer);
         
     }
 
@@ -361,5 +443,66 @@ public class PlayGameFXMLController implements Initializable{
         currentQuestion = server.getNextQuestion();
          
     }
-
+    private void indicateCurrentPlayer(int playerNumber) {
+        if (playerNumber == 1){
+            playerScore1.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName1.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        } 
+        else if (playerNumber == 2){
+            playerScore2.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName2.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 3){
+            playerScore3.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName3.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 4){
+            playerScore4.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName4.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 5){
+            playerScore5.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName5.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 6){
+            playerScore6.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName6.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 7){
+            playerScore7.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName7.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 8){
+            playerScore8.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName8.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 9){
+            playerScore9.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName9.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }
+        else if (playerNumber == 10){
+            playerScore10.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+            playerName10.setStyle("-fx-font-size: 18;"
+                                +"-fx-font-weight: bold;");
+        }    
+    }
 }

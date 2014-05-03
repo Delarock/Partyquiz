@@ -12,7 +12,7 @@
   <children>
     <VBox fx:id="vbox" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <Label fx:id="headerLabel" alignment="CENTER" prefHeight="34.0" prefWidth="225.0" text="Menu" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+        <Label id="header" alignment="CENTER" prefHeight="34.0" prefWidth="225.0" text="Menu" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
           <font>
             <Font name="Algerian" size="30.0" />
           </font>
@@ -24,6 +24,6 @@
     </VBox>
   </children>
   <stylesheets>
-    <URL value="@menufxml.css" />
+    <URL value="@../Resources/colorTemplatePink.css" />
   </stylesheets>
 </AnchorPane>

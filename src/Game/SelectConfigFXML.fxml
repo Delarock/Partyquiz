@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Game.SelectConfigFXMLController">
+  <children>
+    <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Button fx:id="buttonBack" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneBack" prefHeight="50.0" prefWidth="184.0" text="Back" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+          <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x2" />
+          </GridPane.margin>
+        </Button>
+        <Button id="buttonForward" fx:id="buttonNext" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#changeSceneForward" prefHeight="50.0" prefWidth="184.0" text="Next" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x2" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+        <Label id="header" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="478.0" text="Configure Game" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <font>
+            <Font name="System Bold" size="20.0" />
+          </font>
+        </Label>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="479.0">
+              <children>
+                <Label text="Number of Questions per player:" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="479.0" spacing="10.0">
+              <children>
+                <RadioButton id="radioPlayers1" fx:id="fiveQuestions" mnemonicParsing="false" selected="false" text="5 Questions">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="gameQuestionGroup" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton id="radioPlayers2" fx:id="tenQuestions" mnemonicParsing="false" text="10 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers2" fx:id="twentyQuestions" mnemonicParsing="false" text="20 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers2" fx:id="thirthyQuestions" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="13.999908447265625" text="30 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers5" fx:id="fiftyQuestions" mnemonicParsing="false" text="50 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers6" fx:id="hundredQuestions" mnemonicParsing="false" text="100 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers7" fx:id="unlimitedQuestions" mnemonicParsing="false" selected="true" text="Unlimited Questions" toggleGroup="$gameQuestionGroup" />
+              </children>
+              <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </padding>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0" VBox.margin="$x1">
+              <children>
+                <Label text="Time limit:" />
+              </children>
+              <padding>
+                <Insets fx:id="x1" />
+              </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0" VBox.margin="$x1">
+              <children>
+                <RadioButton id="" fx:id="tenSec" mnemonicParsing="false" text="10 sec">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="gameTimeGroup" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton id="thirtySec" fx:id="thirthySec" mnemonicParsing="false" text="30 sec" toggleGroup="$gameTimeGroup" />
+                <RadioButton fx:id="oneMin" mnemonicParsing="false" text="1 min" toggleGroup="$gameTimeGroup" />
+                <RadioButton fx:id="twoMin" mnemonicParsing="false" text="2 min" toggleGroup="$gameTimeGroup" />
+                <RadioButton fx:id="unlimitedTime" mnemonicParsing="false" selected="true" text="Unlimited" toggleGroup="$gameTimeGroup" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <children>
+                <Label alignment="CENTER_LEFT" text="Game type:" />
+              </children>
+              <padding>
+                <Insets fx:id="x1" />
+              </padding>
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <children>
+                <RadioButton fx:id="roundRobin" mnemonicParsing="false" selected="true" text="Round-robin">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="gameTypeGroup" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="everyoneAnswers" disable="true" mnemonicParsing="false" text="Everyone answers" />
+                <RadioButton fx:id="drinkingGame" disable="true" mnemonicParsing="false" text="Drinking game" />
+              </children>
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <padding>
+                <Insets fx:id="x1" />
+              </padding>
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <padding>
+                <Insets fx:id="x1" />
+              </padding>
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0">
+              <padding>
+                <Insets fx:id="x1" />
+              </padding>
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="9.0">
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" percentWidth="20.0" prefWidth="117.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" percentWidth="60.0" prefWidth="421.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" percentWidth="20.0" prefWidth="180.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="75.0" minHeight="10.0" percentHeight="15.0" prefHeight="75.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="75.0" minHeight="10.0" percentHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="74.0" minHeight="10.0" percentHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="100.0" minHeight="10.0" percentHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="129.0" minHeight="10.0" percentHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="179.0" minHeight="10.0" percentHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="171.0" minHeight="10.0" percentHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="74.0" minHeight="10.0" percentHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="74.0" minHeight="10.0" percentHeight="15.0" prefHeight="74.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <stylesheets>
+    <URL value="@../Resources/colorTemplatePink.css" />
+  </stylesheets>
+</AnchorPane>

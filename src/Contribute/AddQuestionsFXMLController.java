@@ -1,12 +1,15 @@
 package Contribute;
 
 import Main.StartGame;
+import Server.ArrayOfQuizCategory;
+import Server.QuizCategory;
 import Server.ServerConnection;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.beans.value.ObservableListValue;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 
 public class AddQuestionsFXMLController {
   
@@ -21,11 +24,9 @@ public class AddQuestionsFXMLController {
   @FXML
   private TextField answer4String;
   @FXML
-  private TextField category;
-  @FXML
-  private TextField subcategory;
-  @FXML
   private ToggleGroup answers;
+  @FXML
+  private ToggleGroup category;
   @FXML
   private RadioButton answer1Radio;
   @FXML
@@ -35,9 +36,24 @@ public class AddQuestionsFXMLController {
   @FXML
   private RadioButton answer4Radio;
   @FXML
+  private RadioButton categorySport;
+  @FXML
+  private RadioButton categoryGeography;
+  @FXML
+  private RadioButton categoryEntertainment;
+  @FXML
+  private RadioButton categoryMixed;
+  @FXML
+  private RadioButton categoryScience;
+  @FXML
+  private RadioButton categoryHistory;
+  @FXML
+  private RadioButton categoryFoodAndDrink;
+  @FXML
   private Button buttonBack;
   @FXML
   private Button buttonSend;
+
   
   
   // Reference to the main application
@@ -48,6 +64,8 @@ public class AddQuestionsFXMLController {
   * The constructor is called before the initialize() method.
   */
   public AddQuestionsFXMLController() {
+      
+//      getAndSetCategoriesSelection();
   }
   
   /**
@@ -62,23 +80,60 @@ public class AddQuestionsFXMLController {
   @FXML
   private void sendQuestion(){
       ServerConnection server = new ServerConnection();
-      server.addQuestionForReview(questionString.getText(), answer1String.getText(), answer2String.getText(), answer3String.getText(), answer4String.getText(), getCorrectAnswerChar(), category.getText());
+      server.addQuestionForReview(questionString.getText(), answer1String.getText(), answer2String.getText(), answer3String.getText(), answer4String.getText(), getCorrectAnswerChar(), getCategory());
       StartGame.changeScene("/Menu/MenuFXML.fxml");
       
   }
 
-    private String getCorrectAnswerChar() {
+    private int getCorrectAnswerChar() {
         if (answer1Radio.isSelected()){
-            return "A";
+            return 1;
         }
         else if (answer2Radio.isSelected()){
-            return "B";
+            return 2;
         }
         else if (answer3Radio.isSelected()){
-            return "C";
+            return 3;
         }
         else{
-            return "D";
+            return 4;
         }
     }
+    private int getCategory(){
+        if (categorySport.isSelected()){
+            return 1;
+        }
+        if (categoryGeography.isSelected()){
+            return 2;
+        }
+        if (categoryEntertainment.isSelected()){
+            return 3;
+        }
+        if (categoryMixed.isSelected()){
+            return 4;
+        }
+        if (categoryScience.isSelected()){
+            return 5;
+        }
+        if (categoryHistory.isSelected()){
+            return 6;
+        }
+        if (categoryFoodAndDrink.isSelected()){
+            return 7;
+        }
+        else return 4;
+    }
+
+//    private void getAndSetCategoriesSelection() {
+//        category = new ChoiceBox(FXCollections.observableArrayList("First", "Second", "Third"));
+//        ServerConnection server = new ServerConnection();
+//        List<QuizCategory> arrayCategory = server.getCategories().getQuizCategory();
+//        ArrayList list = new ArrayList();
+//        String tempString = "\"All\"";
+//        for ( QuizCategory q: arrayCategory){
+//            tempString = tempString + ",\"" + q.getDescription().getValue() + "\"";  
+//        }
+//        //category.setItems(FXCollections.observableArrayList("New Document", "Open ", "Save", "Save as"));
+//        category = new ChoiceBox(FXCollections.observableArrayList(tempString));
+//    }
 }

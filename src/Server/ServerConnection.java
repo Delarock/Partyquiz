@@ -1,11 +1,10 @@
 package Server;
  
 import Questions.Question;
-import java.util.List;
-import javax.xml.bind.JAXBElement;
- 
+
+
 public class ServerConnection {
-     QuizitionService service = new QuizitionService();
+     IQuizitionService service = new QuizitionService().getBasicHttpBindingIQuizitionService();
      ArrayOfQuizQuestion questionList = getNewQuestionList();
      ObjectFactory factory = new ObjectFactory();
      
@@ -14,34 +13,11 @@ public class ServerConnection {
         
     }
  
-    public void addQuestionForReview(String question, String answerA, String answerB, String answerC, String answerD, String correct, String category) 
+    public void addQuestionForReview(String question, String answerA, String answerB, String answerC, String answerD, int correct, int category) 
     {
-        QuizAnswer tempAnswerA = new QuizAnswer();
-            tempAnswerA.setIsCorrect(correct == "A");
-            tempAnswerA.setText(factory.createQuizAnswerText(answerA));
-        QuizAnswer tempAnswerB = new QuizAnswer();
-            tempAnswerB.setIsCorrect(correct == "B");
-            tempAnswerB.setText(factory.createQuizAnswerText(answerB));
-        QuizAnswer tempAnswerC = new QuizAnswer();
-            tempAnswerC.setIsCorrect(correct == "C");
-            tempAnswerC.setText(factory.createQuizAnswerText(answerC));
-        QuizAnswer tempAnswerD = new QuizAnswer();
-            tempAnswerD.setIsCorrect(correct == "D");
-            tempAnswerD.setText(factory.createQuizAnswerText(answerD));
         
-        List<QuizAnswer> answerList = null;
-            answerList.add(tempAnswerA);
-            answerList.add(tempAnswerB);
-            answerList.add(tempAnswerC);
-            answerList.add(tempAnswerD);
-         ArrayOfQuizAnswer answers = factory.createArrayOfQuizAnswer(); //Hvordan gi verdi til denne?
-         JAXBElement<ArrayOfQuizAnswer> JAXanswers = factory.createArrayOfQuizAnswer(answers);
-         
-        QuizQuestion tempQuestion = factory.createQuizQuestion();
-            tempQuestion.setText(factory.createString(question));
-            tempQuestion.setAnswers(JAXanswers);
-            tempQuestion.setCategory(null);
-        //service.getBasicHttpBindingIQuizitionService().addQuestion(new QuizQuestion();
+        service.addQuestionAsStrings(question, answerA, answerB, answerC, answerD, category, correct);
+        
     }
     public Question getNextQuestion()
     {
@@ -67,7 +43,7 @@ public class ServerConnection {
          
     }
     public ArrayOfQuizQuestion getNewQuestionList(){
-       ArrayOfQuizQuestion localQuestionArray = service.getBasicHttpBindingIQuizitionService().getQuestions(50, null);
+       ArrayOfQuizQuestion localQuestionArray = service.getQuestions(50, null);
        return localQuestionArray;
     }
     
@@ -89,6 +65,10 @@ public class ServerConnection {
     public void correctAnswer(int question)
     {
         //TODO
+    }
+
+    public ArrayOfQuizCategory getCategories() {
+        return service.getAllCategories();
     }
     
 
