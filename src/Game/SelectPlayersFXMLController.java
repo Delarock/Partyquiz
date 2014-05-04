@@ -68,12 +68,12 @@ public class SelectPlayersFXMLController {
   
   @FXML
   private void changeSceneBack(){
-      StartGame.changeScene("/Game/SelectConfigFXML.fxml");
+      StartGame.changeScene("/Game/SelectConfigFXML.fxml", "/Resources/colorTemplateFlower.css");
   }
   
   @FXML
   private void changeSceneForward(){
-      StartGame.changeScene("/Game/PlayGameFXML.fxml");
+      StartGame.changeScene("/Game/PlayGameFXML.fxml", "/Resources/colorTemplateFlower.css");
   }
   @FXML
   private void checkPlayers(){

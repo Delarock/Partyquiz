@@ -175,7 +175,4 @@
       </rowConstraints>
     </GridPane>
   </children>
-  <stylesheets>
-    <URL value="@../Resources/colorTemplatePink.css" />
-  </stylesheets>
 </AnchorPane>

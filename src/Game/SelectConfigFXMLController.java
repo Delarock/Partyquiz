@@ -1,6 +1,7 @@
 package Game;
 
 import Main.StartGame;
+import Menu.MenuFXMLController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -60,11 +61,11 @@ public class SelectConfigFXMLController {
   
   @FXML
   private void changeSceneBack(){
-      StartGame.changeScene("/Menu/MenuFXML.fxml");
+      StartGame.changeScene("/Menu/MenuFXML.fxml", StartGame.getStyle());
   }
   
   @FXML
   private void changeSceneForward(){
-      StartGame.changeScene("/Game/SelectPlayersFXML.fxml");
+      StartGame.changeScene("/Game/SelectPlayersFXML.fxml", StartGame.getStyle());
   }
 }

@@ -102,7 +102,7 @@ public class PlayGameFXMLController implements Initializable{
 
     @FXML
     private void changeSceneBack(){
-        StartGame.changeScene("/Menu/MenuFXML.fxml");
+        StartGame.changeScene("/Menu/MenuFXML.fxml", StartGame.getStyle());
     }
 
     private void setNameAndScore(PlayerList list) {

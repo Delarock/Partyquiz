@@ -22,8 +22,28 @@
         <Button fx:id="buttonQuit" mnemonicParsing="false" onAction="#quitGame" prefHeight="41.0" prefWidth="274.0" text="Quit Game" />
       </children>
     </VBox>
+    <AnchorPane layoutX="0.0" layoutY="521.0" prefHeight="66.0" prefWidth="800.0">
+      <children>
+        <HBox alignment="BOTTOM_CENTER" prefHeight="82.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+          <children>
+            <RadioButton fx:id="flower" mnemonicParsing="false" onAction="#changeCss" selected="true" text="Flower">
+              <stylesheets>
+                <URL value="@../Resources/colorTemplateFlower.css" />
+              </stylesheets>
+              <toggleGroup>
+                <ToggleGroup fx:id="templates" />
+              </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="metalic" mnemonicParsing="false" onAction="#changeCss" text="Metalic" toggleGroup="$templates" />
+            <RadioButton fx:id="water" mnemonicParsing="false" onAction="#changeCss" text="Water" toggleGroup="$templates" />
+          </children>
+        </HBox>
+        <HBox alignment="BOTTOM_CENTER" layoutX="0.0" layoutY="5.0" prefHeight="38.0" prefWidth="800.0" spacing="20.0">
+          <children>
+            <Label text="Color Template:" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
   </children>
-  <stylesheets>
-    <URL value="@../Resources/colorTemplatePink.css" />
-  </stylesheets>
 </AnchorPane>

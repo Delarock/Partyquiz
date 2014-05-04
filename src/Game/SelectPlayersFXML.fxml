@@ -191,7 +191,4 @@
       </children>
     </AnchorPane>
   </children>
-  <stylesheets>
-    <URL value="@../Resources/colorTemplatePink.css" />
-  </stylesheets>
 </AnchorPane>

@@ -50,6 +50,12 @@ public class AddQuestionsFXMLController {
   @FXML
   private RadioButton categoryFoodAndDrink;
   @FXML
+  private RadioButton categoryLanguage;
+  @FXML
+  private RadioButton categoryTransportation;
+  @FXML
+  private RadioButton categoryNature;
+  @FXML
   private Button buttonBack;
   @FXML
   private Button buttonSend;
@@ -75,13 +81,13 @@ public class AddQuestionsFXMLController {
   
   @FXML
   private void changeBack(){
-      StartGame.changeScene("/Menu/MenuFXML.fxml");
+      StartGame.changeScene("/Menu/MenuFXML.fxml",StartGame.getStyle());
   }  
   @FXML
   private void sendQuestion(){
       ServerConnection server = new ServerConnection();
       server.addQuestionForReview(questionString.getText(), answer1String.getText(), answer2String.getText(), answer3String.getText(), answer4String.getText(), getCorrectAnswerChar(), getCategory());
-      StartGame.changeScene("/Menu/MenuFXML.fxml");
+      StartGame.changeScene("/Menu/MenuFXML.fxml",StartGame.getStyle());
       
   }
 
@@ -119,7 +125,16 @@ public class AddQuestionsFXMLController {
             return 6;
         }
         if (categoryFoodAndDrink.isSelected()){
-            return 7;
+            return 1002;
+        }
+        if (categoryLanguage.isSelected()){
+            return 1003;
+        }
+        if (categoryTransportation.isSelected()){
+            return 1004;
+        }
+        if (categoryNature.isSelected()){
+            return 1005;
         }
         else return 4;
     }
