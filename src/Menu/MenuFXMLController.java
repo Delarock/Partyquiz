@@ -1,6 +1,12 @@
 package Menu;
 
 import Main.StartGame;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -11,6 +17,8 @@ public class MenuFXMLController {
   private Button buttonStart;
   @FXML
   private Button buttonQuestion;
+  @FXML
+  private Button feedbackQuestion;
   @FXML
   private Button buttonQuit;
   @FXML
@@ -61,6 +69,20 @@ public class MenuFXMLController {
   @FXML
   private void changeCss(){
       StartGame.changeStyle(getCssTemplate());
+  }
+  @FXML
+  private void openSurvey(){
+    if(Desktop.isDesktopSupported())
+    {
+        try {
+            Desktop.getDesktop().browse(new URI("http://www.surveygizmo.com/s3/1645282/Gamequizitions-PartyQuiz-Survey"));
+        } catch (IOException ex) {
+            Logger.getLogger(MenuFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(MenuFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
   }
 }
   

@@ -50,6 +50,9 @@ public class SelectConfigFXMLController {
   @FXML
   private RadioButton drinkingGame;  
   // Reference to the main application
+  int questionsPerPlayer = 0;
+  int timeLimit = 0;
+  boolean timeLimitInUse = false;
   private StartGame startgame;
   
   /**
@@ -68,4 +71,52 @@ public class SelectConfigFXMLController {
   private void changeSceneForward(){
       StartGame.changeScene("/Game/SelectPlayersFXML.fxml", StartGame.getStyle());
   }
+  public boolean getTimeLimitStatus(){
+      return timeLimitInUse;
+  }
+  public int getTimeLimit(){
+      return timeLimit;
+  }
+  private void setTimeLimitAndStatus(){
+      if (tenSec.isSelected()){
+          timeLimit = 10;
+          timeLimitInUse = true;
+      }
+      if (thirthySec.isSelected()){
+          timeLimit = 30;
+          timeLimitInUse = true;
+      }
+      if (oneMin.isSelected()){
+          timeLimit = 60;
+          timeLimitInUse = true;
+      }
+      if (twoMin.isSelected()){
+          timeLimit = 120;
+          timeLimitInUse = true;
+      }
+      else {
+          timeLimit = 9999;
+          timeLimitInUse = false;
+      }
+  }
+  private void setQuestionNumber(){
+    if (fiveQuestions.isSelected())
+        questionsPerPlayer = 5;
+    if (tenQuestions.isSelected())
+        questionsPerPlayer = 10;
+    if (twentyQuestions.isSelected())
+        questionsPerPlayer = 20;
+    if (thirthyQuestions.isSelected())
+        questionsPerPlayer = 30;
+    if (fiftyQuestions.isSelected())
+        questionsPerPlayer = 50;
+    if (hundredQuestions.isSelected())
+        questionsPerPlayer = 100;
+    else questionsPerPlayer = 0;
+    
+  }
+  public int getQuestionsPerPlayer(){
+      return questionsPerPlayer; 
+  }
+  
 }

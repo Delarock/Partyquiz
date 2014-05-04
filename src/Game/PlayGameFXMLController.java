@@ -7,11 +7,16 @@ import Questions.Question;
 import Server.ServerConnection;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.animation.Transition;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -23,6 +28,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.util.Duration;
+import javax.swing.SwingUtilities;
 
 /**
  * FXML Controller class
@@ -72,9 +78,25 @@ public class PlayGameFXMLController implements Initializable{
     @FXML
     private Label playerScore10;
     @FXML
+    private Label questionNumber;
+    @FXML
+    private Label questionsLeft;
+    @FXML
+    private Label questionID;
+    @FXML
+    private Label category;
+    @FXML
+    private Label difficulty;
+    @FXML
     private Button backButton;
     @FXML
+    private Button feedbackLastButton;
+    @FXML
+    private Button feedbackThisButton;
+    @FXML
     private Label questionLabel;
+    @FXML
+    private Label timerLabel;
     @FXML
     private Button questionButton1;
     @FXML
@@ -93,6 +115,15 @@ public class PlayGameFXMLController implements Initializable{
     private PlayerList players;
     private PauseTransition smallBreak = new PauseTransition(Duration.millis(2000));
     boolean canAnswer = true;
+    private Timeline timeline;
+    
+    // Make timeSeconds a Property
+    private static final Integer STARTTIME = 15;
+    private Integer timeSeconds;
+    
+    
+
+    
     /**
     * The constructor.
     * The constructor is called before the initialize() method.
@@ -181,6 +212,7 @@ public class PlayGameFXMLController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         players = new PlayerList();
         players.addPlayers(getNumberOfPlayers());
+        timerLabel.setText("100");
         setNameAndScore(players);
         currentPlayer = 1;
         nextQuestion();
@@ -198,7 +230,8 @@ public class PlayGameFXMLController implements Initializable{
     private void nextQuestion(){
         getNextQuestion();
         addQuestionInfo();
-        canAnswer = true; 
+        canAnswer = true;
+        startTimer();
     }
     @FXML
     private void onPressingButtonA(){
@@ -505,4 +538,8 @@ public class PlayGameFXMLController implements Initializable{
                                 +"-fx-font-weight: bold;");
         }    
     }
+        private void startTimer() {
+            //TODO
+        }
+         
 }

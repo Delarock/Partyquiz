@@ -17,14 +17,16 @@
           <children>
             <GridPane prefHeight="360.0" prefWidth="420.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Category:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Difficulty:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Not yet rated" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Category:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Label id="info" fx:id="category" alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Difficulty:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                <Label id="info" fx:id="difficulty" alignment="CENTER" contentDisplay="CENTER" text="Not yet rated" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                 <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Question number:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
                 <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Questions left:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Label id="info" fx:id="questionNumber" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                <Label id="info" fx:id="questionsLeft" alignment="CENTER" contentDisplay="CENTER" text="Not Specified" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Label id="info" alignment="CENTER" contentDisplay="CENTER" text="Question ID:" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                <Label id="info" fx:id="questionID" alignment="CENTER" contentDisplay="CENTER" text="xxxxx" textAlignment="CENTER" textOverrun="ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -42,7 +44,16 @@
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="592.0" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="9">
           <children>
-            <Button fx:id="backButton" mnemonicParsing="false" onAction="#changeSceneBack" prefHeight="179.0" prefWidth="592.0" text="Back" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="800.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Button fx:id="backButton" mnemonicParsing="false" onAction="#changeSceneBack" prefHeight="50.0" prefWidth="100.0" text="Back" />
+                <Button fx:id="feedbackLastButton" contentDisplay="LEFT" disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Feeback last question" />
+                <Button fx:id="feedbackThisButton" disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Feedback this question" />
+              </children>
+              <padding>
+                <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+              </padding>
+            </HBox>
           </children>
         </AnchorPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.columnSpan="7" GridPane.rowIndex="1" GridPane.rowSpan="3">
@@ -131,6 +142,19 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
+          </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.rowIndex="0" GridPane.rowSpan="2">
+          <children>
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="360.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Label fx:id="timerLabel" text="Label">
+                  <font>
+                    <Font size="30.0" />
+                  </font>
+                </Label>
+              </children>
+            </VBox>
           </children>
         </AnchorPane>
       </children>

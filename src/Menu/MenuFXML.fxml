@@ -19,6 +19,7 @@
         </Label>
         <Button fx:id="buttonStart" mnemonicParsing="false" onAction="#changeScene" prefHeight="41.0" prefWidth="274.0" text="Start new game" textAlignment="LEFT" />
         <Button fx:id="buttonQuestion" mnemonicParsing="false" onAction="#changeAddQuestion" prefHeight="41.0" prefWidth="274.0" text="Send in a question" />
+        <Button id="buttonQuestion" fx:id="feedbackQuestion" mnemonicParsing="false" onAction="#openSurvey" prefHeight="41.0" prefWidth="274.0" text="Give feedback (opens browser)" />
         <Button fx:id="buttonQuit" mnemonicParsing="false" onAction="#quitGame" prefHeight="41.0" prefWidth="274.0" text="Quit Game" />
       </children>
     </VBox>
