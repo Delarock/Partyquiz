@@ -5,6 +5,7 @@ package Questions;
  * @author Morten
  */
 public class Question {
+    private int qID;
     private String questionString, answerA, answerB, answerC, answerD, category, subcategory, difficulty;
     private Boolean correctA, correctB, correctC, correctD;
     
@@ -25,7 +26,7 @@ public class Question {
     }
     public Question(int Id, String Question, String A, String B, String C, String D, boolean IsA,  boolean IsB, boolean IsC, boolean IsD, String Category, String Subcategory)
     {
-        //qID = Id;
+        qID = Id;
         questionString = Question;
         answerA = A;
         correctA = IsA;
@@ -39,7 +40,9 @@ public class Question {
         subcategory = Subcategory;
          
     }
- 
+    public int getQuestionID(){
+        return qID;
+    }
     public String getQuestion(){
         return questionString;
     }

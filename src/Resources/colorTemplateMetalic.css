@@ -5,76 +5,73 @@
     -fx-background-color: grey;
 }
 .Anchorpane {
-    -fx-background-color: grey;
+    -fx-background-color: grey;  
+
+
+    
 }
 .button {
-    -fx-background-color:#f63cef;
-    -fx-font-size: 14;
-    -fx-text-fill: black;
-    -fx-background-radius: 16.4, 15;
-    -fx-background-insets: -1.4, 0;
-    -fx-border-radius: 20;
-    -fx-border-width: 2;
-    -fx-border-color: #f63cef;
-    -fx-padding: 0;
-    -fx-font-family: "Ariel";    
+    -fx-font-family: "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    -fx-font-size:16px;
+    -fx-text-fill: whitesmoke;
+    -fx-background-color: darkgrey;
+
 }
+
 .button:hover {
-    -fx-background-color:#ef09a4;
-    -fx-border-color: #ef09a4;
+    -fx-background-color: darkslategray;
 }
-.button:focused {
-    -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
+.button:active {
+    -fx-background-color: #333333;
+    -fx-border-color: #333333;
+    -fx-color:#eeeeee;
 }
 .questionbutton {
-    -fx-background-color:#f63cef;
-    -fx-font-size: 20;
-    -fx-text-fill: black;
-    -fx-background-radius: 16.4, 15;
-    -fx-background-insets: -1.4, 0;
-    -fx-border-radius: 20;
-    -fx-border-width: 0;
-    -fx-border-color: #f63cef;
-    -fx-padding: 0;
-    -fx-font-family: "Ariel";    
+    -fx-font-family: "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    -fx-font-size:16px;
+    -fx-text-fill: whitesmoke;
+    -fx-background-color: darkgrey;
 }
 .questionbutton:hover {
-    -fx-background-color:#ef09a4;
-    -fx-border-color: #ef09a4;
+    -fx-background-color: darkslategray;
+
 }
-.questionbutton:focused {
-    -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
+.questionbutton:active {
+    -fx-background-color: #333333;
+    -fx-border-color: #333333;
+    -fx-color:#eeeeee;
 }
 .label {
-    -fx-text-fill: black;
+    -fx-text-fill: white;
     -fx-font-size: 14;
-    -fx-font-family: "Ariel";
+    -fx-font-family:"Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 #header {
-    -fx-text-fill: #d9ec9b;
+    -fx-text-fill: whitesmoke;
+    -fx-text-shadow: 0px 1px 0px rgba(255,255,255,.5); /* 50% white from bottom */
     -fx-font-size: 54;
     -fx-font-weigth: bold;
     -fx-font-family: "Impact";
 }
 #info {
-    -fx-text-fill: black;
+    -fx-text-fill: white;
     -fx-font-size: 12;
-    -fx-font-family: "Ariel";
+    -fx-font-family:"Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 #questionLabel {
-    -fx-text-fill: black;
+    -fx-text-fill: #333;
     -fx-font-size: 20;
-    -fx-font-family: "Ariel";
+    -fx-font-family:"Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 .currentPlayer {
-    -fx-text-fill: black;
+    -fx-text-fill: #333;
     -fx-font-size: 18;
-    -fx-font-family: "Ariel";
+    -fx-font-family:"Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 .correctLabel {
     -fx-text-fill: green;
     -fx-font-size: 18;
-    -fx-font-family: "Ariel";
+    -fx-font-family:"Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 //"-fx-background-color: linear-gradient(#999999 0%, #000000 50%, #999999 100%);
 

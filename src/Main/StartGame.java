@@ -6,6 +6,7 @@
 
 package Main;
 
+import Game.Config;
 import Menu.MenuFXMLController;
 import com.sun.javafx.css.Stylesheet;
 import java.io.IOException;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 public class StartGame extends Application {
     private static Stage primaryStage;
     private static AnchorPane rootLayout;
+    private static Config currentConfig;
             
     @Override
     public void start(Stage primarystage) {
@@ -37,6 +39,7 @@ public class StartGame extends Application {
           Scene scene = new Scene(rootLayout);
           primaryStage.setScene(scene);
           primarystage.getScene().getStylesheets().add("/Resources/colorTemplateFlower.css");
+          currentConfig = new Config();
           primaryStage.show();
         } catch (IOException e) {
           // Exception gets thrown if the fxml file could not be loaded
@@ -69,6 +72,12 @@ public class StartGame extends Application {
     }
     public static String getStyle(){
         return primaryStage.getScene().getStylesheets().get(0);
+    }
+    public static Config getConfig(){
+        return currentConfig;
+    }
+    public static void updateConfig(Config config){
+        currentConfig = config;
     }
     
     public static void quitGame(){

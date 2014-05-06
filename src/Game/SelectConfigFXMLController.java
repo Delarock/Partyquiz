@@ -1,5 +1,6 @@
 package Game;
 
+import static Game.SelectConfigFXMLController.questionsPerPlayerInUser;
 import Main.StartGame;
 import Menu.MenuFXMLController;
 import javafx.fxml.FXML;
@@ -50,10 +51,12 @@ public class SelectConfigFXMLController {
   @FXML
   private RadioButton drinkingGame;  
   // Reference to the main application
-  int questionsPerPlayer = 0;
-  int timeLimit = 0;
-  boolean timeLimitInUse = false;
+  static int questionsPerPlayer = 0;
+  static int timeLimit = 0;
+  static boolean timeLimitInUse = false;
+  static boolean questionsPerPlayerInUser = false;
   private StartGame startgame;
+  private Config localConfig = StartGame.getConfig();
   
   /**
   * The constructor.
@@ -64,33 +67,36 @@ public class SelectConfigFXMLController {
   
   @FXML
   private void changeSceneBack(){
+      StartGame.updateConfig(localConfig);
       StartGame.changeScene("/Menu/MenuFXML.fxml", StartGame.getStyle());
   }
   
   @FXML
   private void changeSceneForward(){
+      StartGame.updateConfig(localConfig);
       StartGame.changeScene("/Game/SelectPlayersFXML.fxml", StartGame.getStyle());
   }
   public boolean getTimeLimitStatus(){
       return timeLimitInUse;
   }
-  public int getTimeLimit(){
+  public static int getTimeLimit(){
       return timeLimit;
   }
+  @FXML
   private void setTimeLimitAndStatus(){
       if (tenSec.isSelected()){
           timeLimit = 10;
           timeLimitInUse = true;
       }
-      if (thirthySec.isSelected()){
+      else if (thirthySec.isSelected()){
           timeLimit = 30;
           timeLimitInUse = true;
       }
-      if (oneMin.isSelected()){
+      else if (oneMin.isSelected()){
           timeLimit = 60;
           timeLimitInUse = true;
       }
-      if (twoMin.isSelected()){
+      else if (twoMin.isSelected()){
           timeLimit = 120;
           timeLimitInUse = true;
       }
@@ -98,25 +104,49 @@ public class SelectConfigFXMLController {
           timeLimit = 9999;
           timeLimitInUse = false;
       }
+      localConfig.setCurrentTimeLimit(timeLimit);
+      localConfig.setTimeLimitInUse(timeLimitInUse);
   }
+  @FXML
   private void setQuestionNumber(){
-    if (fiveQuestions.isSelected())
+    if (fiveQuestions.isSelected()){
         questionsPerPlayer = 5;
-    if (tenQuestions.isSelected())
+        questionsPerPlayerInUser = true;
+    }
+    else if (tenQuestions.isSelected()){
         questionsPerPlayer = 10;
-    if (twentyQuestions.isSelected())
+        questionsPerPlayerInUser = true;
+    }
+    else if (twentyQuestions.isSelected()){
         questionsPerPlayer = 20;
-    if (thirthyQuestions.isSelected())
+        questionsPerPlayerInUser = true;
+    }
+    else if (thirthyQuestions.isSelected()){
         questionsPerPlayer = 30;
-    if (fiftyQuestions.isSelected())
+        questionsPerPlayerInUser = true;
+    }
+    else if (fiftyQuestions.isSelected()){
         questionsPerPlayer = 50;
-    if (hundredQuestions.isSelected())
+        questionsPerPlayerInUser = true;
+    }
+    else if (hundredQuestions.isSelected()){
         questionsPerPlayer = 100;
-    else questionsPerPlayer = 0;
+        questionsPerPlayerInUser = true;
+    }
+    else {
+        questionsPerPlayer = 0;
+        questionsPerPlayerInUser = false;    
+    }
+    
+    localConfig.setCurrentQuestionPerPlayerLimit(questionsPerPlayer);
+    localConfig.setQuestionLimitInUse(questionsPerPlayerInUser);
     
   }
   public int getQuestionsPerPlayer(){
       return questionsPerPlayer; 
+  }
+  public static boolean getQuestionPerPlayerInUse(){
+      return questionsPerPlayerInUser;
   }
   
 }

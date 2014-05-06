@@ -19,7 +19,7 @@
           </GridPane.margin>
         </Button>
         <Button id="buttonForward" fx:id="buttonNext" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#changeSceneForward" prefHeight="50.0" prefWidth="184.0" text="Next" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x2" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-        <Label id="header" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="478.0" text="Configure Game" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <Label id="header" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="478.0" text="Configure Game" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
           <font>
             <Font name="System Bold" size="20.0" />
           </font>
@@ -33,17 +33,17 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="479.0" spacing="10.0">
               <children>
-                <RadioButton id="radioPlayers1" fx:id="fiveQuestions" mnemonicParsing="false" selected="false" text="5 Questions">
+                <RadioButton id="radioPlayers1" fx:id="fiveQuestions" mnemonicParsing="false" onAction="#setQuestionNumber" selected="false" text="5 Questions">
                   <toggleGroup>
                     <ToggleGroup fx:id="gameQuestionGroup" />
                   </toggleGroup>
                 </RadioButton>
-                <RadioButton id="radioPlayers2" fx:id="tenQuestions" mnemonicParsing="false" text="10 Questions" toggleGroup="$gameQuestionGroup" />
-                <RadioButton id="radioPlayers2" fx:id="twentyQuestions" mnemonicParsing="false" text="20 Questions" toggleGroup="$gameQuestionGroup" />
-                <RadioButton id="radioPlayers2" fx:id="thirthyQuestions" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="13.999908447265625" text="30 Questions" toggleGroup="$gameQuestionGroup" />
-                <RadioButton id="radioPlayers5" fx:id="fiftyQuestions" mnemonicParsing="false" text="50 Questions" toggleGroup="$gameQuestionGroup" />
-                <RadioButton id="radioPlayers6" fx:id="hundredQuestions" mnemonicParsing="false" text="100 Questions" toggleGroup="$gameQuestionGroup" />
-                <RadioButton id="radioPlayers7" fx:id="unlimitedQuestions" mnemonicParsing="false" selected="true" text="Unlimited Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers2" fx:id="tenQuestions" mnemonicParsing="false" onAction="#setQuestionNumber" text="10 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers2" fx:id="twentyQuestions" mnemonicParsing="false" onAction="#setQuestionNumber" text="20 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers2" fx:id="thirthyQuestions" minHeight="13.999908447265625" mnemonicParsing="false" onAction="#setQuestionNumber" prefHeight="13.999908447265625" text="30 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers5" fx:id="fiftyQuestions" mnemonicParsing="false" onAction="#setQuestionNumber" text="50 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers6" fx:id="hundredQuestions" mnemonicParsing="false" onAction="#setQuestionNumber" text="100 Questions" toggleGroup="$gameQuestionGroup" />
+                <RadioButton id="radioPlayers7" fx:id="unlimitedQuestions" mnemonicParsing="false" onAction="#setQuestionNumber" selected="true" text="Unlimited Questions" toggleGroup="$gameQuestionGroup" />
               </children>
               <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -63,15 +63,15 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0" VBox.margin="$x1">
               <children>
-                <RadioButton id="" fx:id="tenSec" disable="true" mnemonicParsing="false" text="10 sec">
+                <RadioButton id="" fx:id="tenSec" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="10 sec">
                   <toggleGroup>
                     <ToggleGroup fx:id="gameTimeGroup" />
                   </toggleGroup>
                 </RadioButton>
-                <RadioButton id="thirtySec" fx:id="thirthySec" disable="true" mnemonicParsing="false" text="30 sec" toggleGroup="$gameTimeGroup" />
-                <RadioButton fx:id="oneMin" disable="true" mnemonicParsing="false" text="1 min" toggleGroup="$gameTimeGroup" />
-                <RadioButton fx:id="twoMin" disable="true" mnemonicParsing="false" text="2 min" toggleGroup="$gameTimeGroup" />
-                <RadioButton fx:id="unlimitedTime" mnemonicParsing="false" selected="true" text="Unlimited" toggleGroup="$gameTimeGroup" />
+                <RadioButton id="thirtySec" fx:id="thirthySec" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="30 sec" toggleGroup="$gameTimeGroup" />
+                <RadioButton fx:id="oneMin" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="1 min" toggleGroup="$gameTimeGroup" />
+                <RadioButton fx:id="twoMin" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="2 min" toggleGroup="$gameTimeGroup" />
+                <RadioButton fx:id="unlimitedTime" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" selected="true" text="Unlimited" toggleGroup="$gameTimeGroup" />
               </children>
             </HBox>
           </children>
@@ -179,9 +179,9 @@
         </VBox>
       </children>
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" percentWidth="20.0" prefWidth="117.0" />
+        <ColumnConstraints hgrow="NEVER" maxWidth="117.0" minWidth="10.0" percentWidth="20.0" prefWidth="117.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" percentWidth="60.0" prefWidth="421.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" percentWidth="20.0" prefWidth="180.0" />
+        <ColumnConstraints hgrow="NEVER" maxWidth="199.0" minWidth="10.0" percentWidth="20.0" prefWidth="180.0" />
       </columnConstraints>
       <rowConstraints>
         <RowConstraints maxHeight="75.0" minHeight="10.0" percentHeight="15.0" prefHeight="75.0" vgrow="SOMETIMES" />

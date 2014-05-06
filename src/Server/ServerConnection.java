@@ -43,7 +43,7 @@ public class ServerConnection {
          
     }
     public ArrayOfQuizQuestion getNewQuestionList(){
-       ArrayOfQuizQuestion localQuestionArray = service.getQuestions(50, null);
+       ArrayOfQuizQuestion localQuestionArray = service.getQuestions(100, null);
        return localQuestionArray;
     }
     

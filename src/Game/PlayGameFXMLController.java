@@ -22,11 +22,14 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.swing.SwingUtilities;
 
@@ -109,12 +112,16 @@ public class PlayGameFXMLController implements Initializable{
     // Reference to the main application
     private StartGame startgame;
     ServerConnection server = new ServerConnection();
-    int numberOfPlayers = 0;
+    private Config localConfig = StartGame.getConfig();
+    private int numberOfPlayers = 0;
+    private int numberOfQuestionsLeft = 0;
+    private int currentQuestionNumber = 0;
+    private boolean limitedQuestions = localConfig.getQuestionLimitInUse();
     private Question currentQuestion = new Question("Dette er spørsmål nr 1");
     private int currentPlayer;
     private PlayerList players;
     private PauseTransition smallBreak = new PauseTransition(Duration.millis(2000));
-    boolean canAnswer = true;
+    private boolean canAnswer = true;
     private Timeline timeline;
     
     // Make timeSeconds a Property
@@ -205,7 +212,7 @@ public class PlayGameFXMLController implements Initializable{
             playerScore10.setVisible(true);
             numberOfPlayers++;
         }
-         
+        
     }
 
     @Override
@@ -214,6 +221,7 @@ public class PlayGameFXMLController implements Initializable{
         players.addPlayers(getNumberOfPlayers());
         timerLabel.setText("100");
         setNameAndScore(players);
+        numberOfQuestionsLeft = localConfig.getCurrentQuestionPerPlayerLimit() * numberOfPlayers;
         currentPlayer = 1;
         nextQuestion();
         indicateCurrentPlayer(currentPlayer);
@@ -225,6 +233,13 @@ public class PlayGameFXMLController implements Initializable{
         questionButton3.setText(currentQuestion.getAnswerC());
         questionButton4.setText(currentQuestion.getAnswerD());
         questionLabel.setText(currentQuestion.getQuestion());
+        if (limitedQuestions)
+            questionsLeft.setText(Integer.toString(--numberOfQuestionsLeft));
+        questionNumber.setText(Integer.toString(++currentQuestionNumber));
+        category.setText(currentQuestion.getCategory());
+        questionID.setText(Integer.toString(currentQuestion.getQuestionID()));
+        if (currentQuestion.getDifficulty() != null)
+            difficulty.setText(currentQuestion.getDifficulty());
         
     }
     private void nextQuestion(){
@@ -449,6 +464,9 @@ public class PlayGameFXMLController implements Initializable{
         playerName10.setStyle("label");
         playerScore10.setStyle("label");
         
+        if (numberOfQuestionsLeft == 0||numberOfQuestionsLeft < 0 ){
+            endGame();
+        }
         nextPlayer();
         nextQuestion();
         indicateCurrentPlayer(currentPlayer);
@@ -541,5 +559,25 @@ public class PlayGameFXMLController implements Initializable{
         private void startTimer() {
             //TODO
         }
+
+    private void endGame() {
+        Label secondLabel = new Label("Game Over, Dude!");
+                 
+                StackPane secondaryLayout = new StackPane();
+                secondaryLayout.getChildren().add(secondLabel);
+                 
+                Scene secondScene = new Scene(secondaryLayout, 200, 100);
+ 
+                Stage secondStage = new Stage();
+                secondStage.setTitle("Second Stage");
+                secondStage.setScene(secondScene);
+                 
+                //Set position of second window, related to primary window.
+               // secondStage.setX(primaryStage.getX() + 250);
+               // secondStage.setY(primaryStage.getY() + 100);
+  
+                secondStage.show();
+                changeSceneBack();
+    }
          
 }

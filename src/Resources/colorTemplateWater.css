@@ -1,46 +1,45 @@
 .root {
-    -fx-background-color:lightblue;
+    -fx-background-color:#4ff5d2;
 }
 .anchorpane {
-    -fx-background-color:lightblue;
+    -fx-background-color:#4ff5d2;
 }
 .Anchorpane {
-    -fx-background-color:lightblue;
+    -fx-background-color:#4ff5d2;
 }
 .button {
-    -fx-background-color:#f63cef;
+    -fx-background-color:#a6dec2;
     -fx-font-size: 14;
-    -fx-text-fill: black;
-    -fx-background-radius: 16.4, 15;
-    -fx-background-insets: -1.4, 0;
-    -fx-border-radius: 20;
-    -fx-border-width: 2;
-    -fx-border-color: #f63cef;
+    -fx-text-fill: #2e3761;
+    -fx-background-radius: 15, 15;
+    -fx-border-radius:60px;
+    -fx-border-width: 4;
+    -fx-border-color: #a6dec2;
     -fx-padding: 0;
     -fx-font-family: "Ariel";    
 }
 .button:hover {
-    -fx-background-color:#ef09a4;
-    -fx-border-color: #ef09a4;
+    -fx-background-color:lightseagreen;
+    -fx-border-color: lightseagreen;
 }
 .button:focused {
     -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
 }
 .questionbutton {
-    -fx-background-color:#f63cef;
+    -fx-background-color:#a6dec2;
     -fx-font-size: 20;
-    -fx-text-fill: black;
+    -fx-text-fill: #2e3761;
     -fx-background-radius: 16.4, 15;
     -fx-background-insets: -1.4, 0;
     -fx-border-radius: 20;
     -fx-border-width: 0;
-    -fx-border-color: #f63cef;
+    -fx-border-color: #a6dec2;
     -fx-padding: 0;
     -fx-font-family: "Ariel";    
 }
 .questionbutton:hover {
-    -fx-background-color:#ef09a4;
-    -fx-border-color: #ef09a4;
+    -fx-background-color:lightseagreen;
+    -fx-border-color: lightseagreen;
 }
 .questionbutton:focused {
     -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
@@ -51,7 +50,7 @@
     -fx-font-family: "Ariel";
 }
 #header {
-    -fx-text-fill: #d9ec9b;
+    -fx-text-fill: #2ae3a1;
     -fx-font-size: 54;
     -fx-font-weigth: bold;
     -fx-font-family: "Impact";
@@ -62,7 +61,7 @@
     -fx-font-family: "Ariel";
 }
 #questionLabel {
-    -fx-text-fill: black;
+    -fx-text-fill: #2e3761;
     -fx-font-size: 20;
     -fx-font-family: "Ariel";
 }
