@@ -1,0 +1,31 @@
+.root {
+    -fx-background-color:#e48bb4;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: black;
+    -fx-font-size: 14;
+}
+.button {
+    -fx-background-color:#f63cef;
+    -fx-font-size: 14;
+    -fx-text-fill: black;
+    -fx-background-radius: 16.4, 15;
+    -fx-background-insets: -1.4, 0;
+    -fx-border-radius: 20;
+    -fx-border-width: 0;
+    -fx-border-color: #f63cef;
+    -fx-padding: 0;
+    -fx-font-family: "Ariel";    
+}
+.button:hover {
+    -fx-background-color:#ef09a4;
+    -fx-border-color: #ef09a4;
+}
+.button:focused {
+    -fx-effect: innershadow(gaussian, blue, 2, 0, 0, 0);
+}
+.label {
+    -fx-text-fill: #d9ec9b;
+    -fx-font-size: 54;
+    -fx-font-weigth: bold;
+    -fx-font-family: "Impact";
+}
