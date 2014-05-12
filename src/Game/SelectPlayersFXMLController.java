@@ -1,6 +1,8 @@
 package Game;
 
 import Main.StartGame;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -73,6 +75,7 @@ public class SelectPlayersFXMLController {
   
   @FXML
   private void changeSceneForward(){
+      checkPlayers();
       StartGame.changeScene("/Game/PlayGameFXML.fxml", StartGame.getStyle());
   }
   @FXML
@@ -198,7 +201,8 @@ public class SelectPlayersFXMLController {
         numberOfPlayers = 1;
      }       
    }
-  public static int getNumberOfPlayers()
+  
+    public static int getNumberOfPlayers()
      {
          return numberOfPlayers;
      }
