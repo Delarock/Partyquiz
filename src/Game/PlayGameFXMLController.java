@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+import javafx.animation.Animation;
+import static javafx.animation.Animation.INDEFINITE;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.PauseTransition;
@@ -112,21 +114,20 @@ public class PlayGameFXMLController implements Initializable{
     // Reference to the main application
     private StartGame startgame;
     ServerConnection server = new ServerConnection();
-    private Config localConfig = StartGame.getConfig();
+    private Config localConfig;
     private int numberOfPlayers = 0;
     private int numberOfQuestionsLeft = 0;
     private int currentQuestionNumber = 0;
-    private boolean limitedQuestions = localConfig.getQuestionLimitInUse();
+    private boolean limitedQuestions;
     private Question currentQuestion = new Question("Dette er spørsmål nr 1");
     private int currentPlayer;
     private PlayerList players;
     private PauseTransition smallBreak = new PauseTransition(Duration.millis(2000));
+    private PauseTransition countDown = new PauseTransition(Duration.millis(1000));
     private boolean canAnswer = true;
-    private Timeline timeline;
-    
-    // Make timeSeconds a Property
-    private static final Integer STARTTIME = 15;
     private Integer timeSeconds;
+    private boolean timeInUse;
+    private boolean arePlaying;
     
     
 
@@ -136,6 +137,7 @@ public class PlayGameFXMLController implements Initializable{
     * The constructor is called before the initialize() method.
     */
     public PlayGameFXMLController () {
+        
     }
 
     @FXML
@@ -217,12 +219,21 @@ public class PlayGameFXMLController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        localConfig = StartGame.getConfig();
+        limitedQuestions = localConfig.getQuestionLimitInUse();
+        timeSeconds = localConfig.getCurrentTimeLimit();
+        timeInUse = localConfig.getTimeLimitInUse();
         players = new PlayerList();
         players.addPlayers(getNumberOfPlayers());
-        timerLabel.setText("100");
+        if (timeInUse)
+            timerLabel.setText(Integer.toString(localConfig.getCurrentTimeLimit()));
+        else
+            timerLabel.setText("Unlimited");
         setNameAndScore(players);
         numberOfQuestionsLeft = localConfig.getCurrentQuestionPerPlayerLimit() * numberOfPlayers;
         currentPlayer = 1;
+        arePlaying = true;
         nextQuestion();
         indicateCurrentPlayer(currentPlayer);
     } 
@@ -557,27 +568,47 @@ public class PlayGameFXMLController implements Initializable{
         }    
     }
         private void startTimer() {
-            //TODO
+            timeSeconds = localConfig.getCurrentTimeLimit();
+            countDown.onFinishedProperty().set(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent actionEvent) {
+                timerLabel.setText(Integer.toString(timeSeconds--));
+                if (!arePlaying)
+                {
+                    countDown.stop();
+                }
+                else if (timeSeconds < 0 && canAnswer)
+                {
+                    countDown.stop();
+                    nextRound();
+                }
+                else
+                    countDown.play();
+          }
+        });
+            countDown.play();
         }
 
     private void endGame() {
+        arePlaying = false;
         Label secondLabel = new Label("Game Over, Dude!");
                  
-                StackPane secondaryLayout = new StackPane();
-                secondaryLayout.getChildren().add(secondLabel);
-                 
-                Scene secondScene = new Scene(secondaryLayout, 200, 100);
- 
-                Stage secondStage = new Stage();
-                secondStage.setTitle("Second Stage");
-                secondStage.setScene(secondScene);
-                 
-                //Set position of second window, related to primary window.
-               // secondStage.setX(primaryStage.getX() + 250);
-               // secondStage.setY(primaryStage.getY() + 100);
-  
-                secondStage.show();
-                changeSceneBack();
+        StackPane secondaryLayout = new StackPane();
+        secondaryLayout.getChildren().add(secondLabel);
+
+        Scene secondScene = new Scene(secondaryLayout, 200, 100);
+
+        Stage secondStage = new Stage();
+        secondStage.setTitle("Second Stage");
+        secondStage.setScene(secondScene);
+
+        //Set position of second window, related to primary window.
+       // secondStage.setX(primaryStage.getX() + 250);
+       // secondStage.setY(primaryStage.getY() + 100);
+
+        secondStage.show();
+        this.countDown.stop();
+        changeSceneBack();
+           
     }
          
 }

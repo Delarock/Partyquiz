@@ -73,6 +73,8 @@ public class SelectConfigFXMLController {
   
   @FXML
   private void changeSceneForward(){
+      setTimeLimitAndStatus();
+      setQuestionNumber();
       StartGame.updateConfig(localConfig);
       StartGame.changeScene("/Game/SelectPlayersFXML.fxml", StartGame.getStyle());
   }

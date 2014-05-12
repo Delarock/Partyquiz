@@ -72,10 +72,10 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
               <children>
                 <RadioButton fx:id="categoryHistory" mnemonicParsing="false" text="History" toggleGroup="$category" />
-                <RadioButton fx:id="categoryFoodAndDrink" disable="true" mnemonicParsing="false" text="Food &amp; Drink" toggleGroup="$category" />
-                <RadioButton disable="true" mnemonicParsing="false" text="Placeholder" toggleGroup="$category" />
-                <RadioButton disable="true" mnemonicParsing="false" text="Placeholder" toggleGroup="$category" />
-                <RadioButton disable="true" mnemonicParsing="false" text="Placeholder" toggleGroup="$category" />
+                <RadioButton fx:id="categoryFoodAndDrink" disable="false" mnemonicParsing="false" text="Food &amp; Drink" toggleGroup="$category" />
+                <RadioButton fx:id="categoryLanguage" disable="false" mnemonicParsing="false" text="Language" toggleGroup="$category" />
+                <RadioButton fx:id="categoryTransportation" disable="false" mnemonicParsing="false" text="Transportation" toggleGroup="$category" />
+                <RadioButton fx:id="categoryNature" disable="false" mnemonicParsing="false" text="Nature" toggleGroup="$category" />
               </children>
             </HBox>
           </children>

@@ -63,14 +63,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="401.0" spacing="10.0" VBox.margin="$x1">
               <children>
-                <RadioButton id="" fx:id="tenSec" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="10 sec">
+                <RadioButton id="" fx:id="tenSec" disable="false" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="10 sec" visible="true">
                   <toggleGroup>
                     <ToggleGroup fx:id="gameTimeGroup" />
                   </toggleGroup>
                 </RadioButton>
-                <RadioButton id="thirtySec" fx:id="thirthySec" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="30 sec" toggleGroup="$gameTimeGroup" />
-                <RadioButton fx:id="oneMin" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="1 min" toggleGroup="$gameTimeGroup" />
-                <RadioButton fx:id="twoMin" disable="true" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="2 min" toggleGroup="$gameTimeGroup" />
+                <RadioButton id="thirtySec" fx:id="thirthySec" disable="false" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="30 sec" toggleGroup="$gameTimeGroup" visible="true" />
+                <RadioButton fx:id="oneMin" disable="false" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="1 min" toggleGroup="$gameTimeGroup" visible="true" />
+                <RadioButton fx:id="twoMin" disable="false" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" text="2 min" toggleGroup="$gameTimeGroup" visible="true" />
                 <RadioButton fx:id="unlimitedTime" mnemonicParsing="false" onAction="#setTimeLimitAndStatus" selected="true" text="Unlimited" toggleGroup="$gameTimeGroup" />
               </children>
             </HBox>
